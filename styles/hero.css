@@ -1,0 +1,60 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  background: linear-gradient(to bottom right, #4B773B 45%, #85bb6b 65%);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#ellipse1 {
+  position: absolute;
+  top: -3.5rem;
+  left: 14rem;
+  width: 50rem;
+  height: 50rem;
+  z-index: 1; /* Places the ellipse behind the main content */
+}
+
+#ellipse2 {
+  position: absolute;
+  bottom: 5rem;
+  left: 11rem;
+  width: 50rem;
+  height: 50rem;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Ensures the text is on top of the ellipses */
+}
+
+.hero-image {
+  position: absolute;
+  bottom: 0;
+  right: 100px;
+  width: 500px;
+  z-index: 2;
+}
+
+.hero-image{
+  width: 55%;
+  height: 90%;
+  top: 13rem;
+  right: 6rem;
+}
+
+.hero-content{
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 8%;
+  color: var(--color-text-light);
+  margin: 0;
+  top: 14rem;
+  left: 10rem;
+}

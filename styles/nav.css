@@ -1,0 +1,83 @@
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3rem 5rem 0rem;
+}
+
+.logo img {
+  height: 4rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 400px;
+  border: 1px solid #ffb800;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #f7f7f7;
+  position: relative; /* This is crucial for positioning the icon */
+  padding-right: 2rem;
+  margin: 0;
+}
+
+.search-input {
+  width: 100%; /* Make the input fill its container */
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  outline: none; /* Remove default focus outline */
+  background-color: transparent;
+}
+
+.search-icon {
+  position: absolute;
+  width: 1rem;
+  right: 1rem;
+  pointer-events: none; /* Prevents the icon from interfering with input clicks */
+}
+
+/* Navigation Links Styling */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link1 {
+  color: var(--color-text-light);
+}
+
+/* Style for the cart icon's image */
+.nav-links li a img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.login-btn {
+  background-color: #4B773B;
+  color: var(--color-text-light);
+  border: 2px solid var(--color-text-light); /* Correct border color */
+  border-radius: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.register-btn {
+  background-color: var(--color-text-light);
+  color: var(--color-list-marker);
+  border-radius: 1rem;
+  padding: 0.6rem 1rem;
+}

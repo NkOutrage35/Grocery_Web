@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GrociFy - Your Online Grocery Store</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <link rel="stylesheet" href="styles/features.css" />
+    <link rel="stylesheet" href="styles/item-cards.css" />
+    <link rel="stylesheet" href="styles/category.css" />
+    <link rel="stylesheet" href="styles/download.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo">
+            <img src="images/Grocify.svg" alt="GrociFy Logo" />
+          </a>
+
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search" />
+            <img
+              src="images/Vector.svg"
+              alt="Search icon"
+              class="search-icon"
+            />
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-link nav-link1">Home</a></li>
+            <li><a href="#about" class="nav-link nav-link1">About</a></li>
+            <li><a href="#contact" class="nav-link nav-link1">Contact</a></li>
+            <li>
+              <a href="#cart" class="nav-link">
+                <img src="images/Vector (1).svg" alt="Cart" id="cart-icon" />
+              </a>
+            </li>
+            <li><a href="#login" class="login-btn">Login</a></li>
+            <li><a href="#register" class="register-btn">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="hero">
+        <div class="hero-content">
+          <p>
+            Buy your groceries and<br />
+            have it delivered<br />
+            to your doorstep with<br />
+            ease.
+          </p>
+        </div>
+        <img src="images/Ellipse 3.svg" id="ellipse1" />
+        <img src="images/Ellipse 4.svg" id="ellipse2" />
+        <img
+          src="images/grocery-png-115539559137hbqku3ydb-removebg-preview 1.png"
+          alt="Hero Image"
+          class="hero-image"
+        />
+      </div>
+    </header>
+
+    <section class="content-section">
+      <div class="content">
+        <img
+          src="images\Smart-Sentials-Office-Delivery-Service 1.png"
+          alt="Decorative Line"
+          class="content-img img1"
+        />
+        <img
+          src="images\Rectangle384.png"
+          alt="Decorative Line"
+          class="content-img img2"
+        />
+      </div>
+      <h2 id="content-text">
+        Why We Are The<br />
+        Best?
+      </h2>
+      <ul class="features">
+        <li class="feature-item">
+          <p>
+            We serve you the best of<br />
+            fresh, nutrient-rich and<br />
+            healthy groceries
+          </p>
+        </li>
+
+        <li class="feature-item">
+          <p>Swift Delivery</p>
+        </li>
+
+        <li class="feature-item">
+          <p>Great Refund Policy</p>
+        </li>
+
+        <li class="feature-item">
+          <p>Wide coverage Map</p>
+        </li>
+      </ul>
+    </section>
+    <section class="flash-sale">
+      <h2 class="flash-title">
+        <span>Flash Sales</span>
+      </h2>
+
+      <div class="countdown">
+        <div class="time-box">
+          <span class="time">02</span>
+          <span class="label">DAYS</span>
+        </div>
+        <div class="time-box">
+          <span class="time">14</span>
+          <span class="label">HOURS</span>
+        </div>
+        <div class="time-box">
+          <span class="time">26</span>
+          <span class="label">MINS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="item-cards-section">
+      <div class="card-and-scroll-wrapper">
+        <div><button class="scroll" id="scroll-left"><</button></div>
+
+        <div class="item-cards-container">
+          <div class="item-card">
+            <img
+              src="images\unsplash_aeE-Y7SVVR4.png"
+              alt="Pork"
+              class="item-image"
+            />
+            <div class="pricing">
+              <p class="discount">35%</p>
+              <h3 class="item-name">Pork</h3>
+              <p class="item-price-old">₦2000.00</p>
+              <div class="price-and-button">
+                <p class="item-price">₦1000.00/kg</p>
+                <button class="add-to-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <img
+              src="images\unsplash_4jpNPu7IW8k.png"
+              alt="Spinach"
+              class="item-image"
+            />
+            <div class="pricing">
+              <p class="discount">20%</p>
+              <h3 class="item-name">Spinach</h3>
+              <p class="item-price-old">₦2000.00</p>
+              <div class="price-and-button">
+                <p class="item-price">₦1600.00/kg</p>
+                <button class="add-to-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <img
+              src="images\unsplash_lvmFFcLvHl8.png"
+              alt="Beef Meat"
+              class="item-image"
+            />
+            <div class="pricing">
+              <p class="discount">50%</p>
+              <h3 class="item-name">Beef Meat</h3>
+              <p class="item-price-old">₦2000.00</p>
+              <div class="price-and-button">
+                <p class="item-price">₦1000.00/kg</p>
+                <button class="add-to-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <img
+              src="images\unsplash_wXuzS9xR49M.png"
+              alt="Apple"
+              class="item-image"
+            />
+            <div class="pricing">
+              <p class="discount">50%</p>
+              <h3 class="item-name">Apple</h3>
+              <p class="item-price-old">₦2000.00</p>
+              <div class="price-and-button">
+                <p class="item-price">₦1000.00/kg</p>
+                <button class="add-to-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <img
+              src="images\unsplash_wQFmDhrvVSs.png"
+              alt="Coca Cola"
+              class="item-image"
+            />
+            <div class="pricing">
+              <p class="discount">5%</p>
+              <h3 class="item-name">Coca Cola</h3>
+              <p class="item-price-old">₦500.00</p>
+              <div class="price-and-button">
+                <p class="item-price">₦475.00</p>
+                <button class="add-to-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="item-card">
+            <img
+              src="images\unsplash_c9AuglIqhes.png"
+              alt="Bag of Rice"
+              class="item-image"
+            />
+            <div class="pricing">
+              <p class="discount">50%</p>
+              <h3 class="item-name">Bag of Rice</h3>
+              <p class="item-price-old">₦50000.00</p>
+              <div class="price-and-button">
+                <p class="item-price">₦25000.00/kg</p>
+                <button class="add-to-cart-btn">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div><button class="scroll" id="scroll-right">></button></div>
+      </div>
+      <p class="view-all">VIEW ALL</p>
+    </section>
+
+    <!-- New Category Section -->
+    <section class="category-section">
+      <div class="category-header">
+        <h2>
+          Enjoy your favorite<br />
+          grocery items
+        </h2>
+        <img
+          src="images/istockphoto-513986542-1024x1024-removebg-preview 1.png"
+          alt="plant"
+          class="plant"
+        />
+      </div>
+      <h2>Shop by Category</h2>
+
+      <div class="category-container">
+        <div><button class="scroll2" id="scroll2-left"><</button></div>
+
+        <div class="category-card">
+          <img src="images\unsplash_-ftWfohtjNw.png" alt="Vegetables" />
+          <h3>Vegetables</h3>
+        </div>
+        <div class="category-card">
+          <img src="images\unsplash_tk2ifGN60xo.png" alt="Beverage" />
+          <h3>Beverage</h3>
+        </div>
+        <div class="category-card">
+          <img src="images\unsplash_SJ7uORconic.png" alt="Noodles/Pasta" />
+          <h3>Noodles/Pasta</h3>
+        </div>
+        <div class="category-card">
+          <img src="images\unsplash_JI5VdAD2mAo.png" alt="Fruits" />
+          <h3>Fruits</h3>
+        </div>
+        <div class="category-card">
+          <img src="images\unsplash_DNQLBdGdld0.png" alt="Frozen Food" />
+          <h3>Frozen Food</h3>
+        </div>
+
+        <div><button class="scroll2" id="scroll2-right">></button></div>
+      </div>
+    </section>
+
+    <section class="download-section">
+      <div class="download-container">
+        <div class="content-wrapper">
+          <div class="image-content">
+            <div class="phone-image">
+              <img src="images/Group 469.png" alt="Mobile App" />
+            </div>
+            <div class="background-shapes">
+              <div class="green-bg"></div>
+              <div class="yellow-bg"></div>
+            </div>
+          </div>
+
+          <div class="text-content">
+            <h2>Download Our <br />Mobile App</h2>
+            <p>Simple and efficient to use!</p>
+            <div class="download-buttons">
+              <a href="#" class="download-btn apple-store">
+                <img src="images/Vector (2).svg" alt="Apple Store" />
+                <div>
+                  <span>Download on the</span>
+                  <strong>Apple store</strong>
+                </div>
+              </a>
+              <a href="#" class="download-btn google-play">
+                <img
+                  src="images/download__2_-removebg-preview 1.svg"
+                  alt="Google Play"
+                />
+                <div>
+                  <span>Download on the</span>
+                  <strong>Google Play store</strong>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-logo">
+        <img src="images/Grocify.svg" alt="Grocify Logo" />
+      </div>
+
+      <div class="upper-footer">
+        <div class="footer-content">
+          <h3 class="footer-text-heading">About</h3>
+          <ul class="footer-text">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-content">
+          <h3 class="footer-text-heading">Help</h3>
+          <ul class="footer-text">
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#">Delivery Details</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-content">
+          <h3 class="footer-text-heading">Get connected</h3>
+          <p>
+            Join the conversation on social<br />
+            media and stay connected with our<br />
+            latest products and Services.
+          </p>
+          <div class="socials">
+            <a href="#"><img src="images/image 3.svg" alt="Social Icon 3" /></a>
+            <a href="#"><img src="images/image 2.svg" alt="Social Icon 2" /></a>
+            <a href="#"><img src="images/image 1.svg" alt="Social Icon 1" /></a>
+          </div>
+        </div>
+
+        <div class="footer-content">
+          <h3 class="footer-text-heading">Stay informed</h3>
+          <p>
+            Subscribe to our notification<br />
+            to receive updates of new<br />
+            products and services.
+          </p>
+          <a href="#" class="subscribe-link">Subscribe</a>
+        </div>
+      </div>
+
+      <div class="lower-footer">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> |
+        <a href="#">Refund Policy</a>
+      </div>
+    </footer>
+  </body>
+</html>

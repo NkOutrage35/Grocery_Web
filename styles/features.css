@@ -1,0 +1,155 @@
+.content-section {
+  display: flex;
+}
+.content {
+  padding: 4rem;
+  padding-left: 4rem;
+}
+
+.content-img.img1 {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.content-img.img2 {
+  width: 58%;
+  height: 70%;
+  position: absolute;
+  left: 3.5rem;
+  top: 76.5rem;
+}
+
+#content-text {
+  position: relative;
+  font-weight: 800;
+  font-size: 3.5rem;
+  font-style: Bold;
+  line-height: 3.5rem;
+  color: var(--color-main-text);
+  width: 70%;
+  left: -13rem;
+  top: 5rem;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  top: 20rem;
+  right: 7rem;
+}
+
+.feature-item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.5rem;
+  width: 27rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* spacing between dot and text */
+}
+
+.feature-item p {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.feature-item::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.feature-item:nth-child(1)::before {
+  background-color: #289402;
+}
+
+.feature-item:nth-child(2)::before {
+  background-color: #ffb800;
+}
+
+.feature-item:nth-child(3)::before {
+  background-color: #289402;
+}
+
+.feature-item:nth-child(4)::before {
+  background-color: #ffb800;
+}
+
+/* Section container */
+.flash-sale {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 40px 0;
+}
+
+.flash-title {
+  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  top: 1rem;
+  margin-bottom: 4.5rem;
+  display: inline-block;
+  padding: 0 6rem;
+}
+
+.flash-title::before,
+.flash-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 17rem;
+  height: 0.2rem;
+  background: #ccc;
+}
+
+.flash-title::before {
+  left: -11.5rem;
+}
+
+.flash-title::after {
+  right: -11.5rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.time-box {
+  background: #1E1A1A;
+  color: #fff;
+  padding: 1rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 25rem;
+}
+
+/* Number styling */
+.time-box .time {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Label styling */
+.time-box .label {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fffdfd9d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,32 @@
+:root {
+  /* Main text color */
+  --color-main-text: #000000;
+
+  /* Hero, navigation, and footer text color */
+  --color-text-light: #FFFFFF;
+
+  /* List marker color (e.g., bullet points) */
+  --color-list-marker: #289402;
+   --color-button-green: #339944; 
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic body styles */
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--color-main-text);
+}
+
+/* Reusable headings */
+.section-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
