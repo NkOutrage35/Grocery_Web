@@ -1,0 +1,140 @@
+.grocery-section {
+  margin-top: 5rem;
+}
+
+#grocery-section-header {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+/* Container grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 80%;
+  gap: 3.5rem;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+/* Card styling */
+.product-card {
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 120%;
+  box-sizing: border-box;
+}
+
+/* Product image */
+.product-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+
+/* Text styling */
+.product-name {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+#add-to-cart-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Action buttons row */
+.product-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+/* Quantity controls container */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  border: 1px solid #ffb800;
+  border-radius: 0.5rem;
+}
+
+/* Quantity buttons */
+.qty-btn {
+  width: 1.3rem;
+  height: 1.6rem;
+  border: none;
+  background: #ffffff;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Quantity display */
+.qty-display {
+  min-width: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #289402;
+}
+
+/* Add to cart button */
+.add-btn {
+  flex: 1;
+  justify-items: space-between;
+  background: #289402;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #219150;
+}
+
+.see-more {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 5rem 0 3rem;
+  cursor: pointer;
+  color: #2bc645;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: 2px solid #339944;
+  border-radius: 1rem;
+  text-align: center;
+  width: 10%;
+  padding: 0.75rem;
+  position: relative;
+  left: 48rem;
+  transition: background-color 0.3s ease;
+}
