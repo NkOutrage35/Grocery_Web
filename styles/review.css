@@ -1,0 +1,117 @@
+/* Title */
+.flash-title2 {
+  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  top: 1rem;
+  left: 38%;
+  margin: 7rem 0 4.5rem 0;
+  display: inline-block;
+  padding: 0 6rem;
+}
+
+.flash-title2::before,
+.flash-title2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 17rem;
+  height: 0.2rem;
+  background: #ccc;
+}
+
+.flash-title2::before {
+  left: -11.5rem;
+}
+
+.flash-title2::after {
+  right: -11.5rem;
+}
+
+/* Container for all reviews */
+.reviews {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding: 2rem;
+  background-color: rgba(43, 234, 12, 0.03);
+}
+
+/* Each review card */
+.review-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  width: 100%;
+  max-width: 30rem;
+  min-height: 22rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header with stars and date */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  width: 10rem;
+  height: auto;
+}
+
+.review-date {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #666;
+}
+
+/* Review text */
+.review-text {
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Footer with image + name */
+.review-footer {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 0.5rem;
+}
+
+.client-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e6e6e6;
+}
+
+.client-name {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #333;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .reviews {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-card {
+    width: 90%;
+    max-width: none;
+  }
+}
