@@ -1,5 +1,6 @@
 .hero {
   position: relative;
+  bottom: 1rem;
   height: 100vh;
   overflow: hidden;
 }
@@ -16,7 +17,7 @@ header {
   left: 14rem;
   width: 50rem;
   height: 50rem;
-  z-index: 1; /* Places the ellipse behind the main content */
+  z-index: 2; /* Places the ellipse behind the main content */
 }
 
 #ellipse2 {
@@ -25,7 +26,7 @@ header {
   left: 11rem;
   width: 50rem;
   height: 50rem;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-content {
@@ -38,7 +39,7 @@ header {
   bottom: 0;
   right: 100px;
   width: 500px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-image{
@@ -46,6 +47,17 @@ header {
   height: 90%;
   top: 13rem;
   right: 6rem;
+}
+
+#paper-bag {
+  position: relative;
+  opacity: 0.2;
+  bottom: 0;
+  left: 42rem;
+  bottom:16.5rem ;
+  width: 65%;
+  height: 110%;
+  z-index: 1;
 }
 
 .hero-content{

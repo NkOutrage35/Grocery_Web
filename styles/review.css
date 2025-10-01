@@ -1,12 +1,17 @@
+/* Review Section Styles */
+.reviews-section {
+  margin-top: -13rem;
+}
+
+
 /* Title */
 .flash-title2 {
   position: relative;
   font-size: 3rem;
   font-weight: bold;
   color: #333;
-  top: 1rem;
-  left: 38%;
-  margin: 7rem 0 4.5rem 0;
+  left: 8%;
+  margin: 0rem 0 2.5rem 0;
   display: inline-block;
   padding: 0 6rem;
 }
@@ -27,6 +32,14 @@
 
 .flash-title2::after {
   right: -11.5rem;
+}
+
+.grocery-decorative-fruits {
+  position: relative;
+  top: 10.5rem;
+  left: -8rem;
+  width: 28%;
+  transform: rotate(112.64deg);
 }
 
 /* Container for all reviews */

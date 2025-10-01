@@ -4,7 +4,7 @@ body {
 }
 
 .download-section {
-  padding: 80px 0;
+  padding: 5rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -18,23 +18,20 @@ body {
 .content-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 40px;
 }
 
-
-.text-content {
-  flex: 1;
-  z-index: 2;
+.download-text{
+  position: relative;
+  left: 45rem;
+  bottom: 50rem;
 }
 
 .text-content h2 {
   font-size: 3rem;
   color: #000000;
   margin-bottom: 10px;
-  font-weight: 600;
-
+  font-weight: 700;
 }
 
 .text-content p {
@@ -51,9 +48,12 @@ body {
 
 .download-btn {
   display: flex;
+  position: relative;
   align-items: center;
-  padding: 15px 20px;
-  border-radius: 10px;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  left: 15rem;
+  top: -15rem;
   text-decoration: none;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -65,9 +65,9 @@ body {
 }
 
 .download-btn img {
-  width: 40px;
-  height: 40px;
-  margin-right: 15px;
+  width: 5rem;
+  height: 5rem;
+  margin-right: 1rem;
 }
 
 .download-btn div {
@@ -83,7 +83,7 @@ body {
 
 .download-btn strong {
   font-size: 1.2rem;
-    font-weight: 600;
+  font-weight: 600;
   color: #fff;
   font-weight: 600;
 }
@@ -97,52 +97,34 @@ body {
 }
 
 .image-content {
-  flex: 1;
-  min-width: 300px;
-  position: relative;
   display: flex;
-  justify-content: center;
 }
 
 .phone-image {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .phone-image img {
+  width: 250rem;
   max-width: 100%;
   height: auto;
 }
 
-.background-shapes {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
 .green-bg {
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 300px;
-  height: 300px;
-  background-image: url("images/Rectangle\ 408.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+  position: relative;
+  width: 135%;
+  height: 58%;
+  top: 7rem;
+  left: -42.5rem;
   z-index: 1;
 }
 
 .yellow-bg {
-  position: absolute;
-  bottom: -50px;
-  left: -50px;
-  width: 250px;
-  height: 250px;
-  background-image: url("images/Rectangle\ 409.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1;
+  position: relative;
+  width: 115%;
+  height: 45.5%;
+  top: -12rem;
+  left: -32.5rem;
+  z-index: 2;
 }
