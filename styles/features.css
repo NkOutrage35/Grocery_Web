@@ -129,13 +129,13 @@
 }
 
 .time-box {
-  background: #1E1A1A;
+  background: #1e1a1a;
   color: #fff;
   padding: 1rem 1rem;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 25rem;
+  width: 20rem;
 }
 
 /* Number styling */
@@ -152,4 +152,127 @@
   color: #fffdfd9d;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* === Scroll-driven Animations === */
+
+/* img1 fades/slides in when in view */
+.content-img.img1 {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: img1FadeIn ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes img1FadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* img2 fades/slides in when in view */
+.content-img.img2 {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: img2FadeIn ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes img2FadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#content-text {
+  animation: flashTitlePop both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 70%;
+}
+
+@keyframes flashTitlePop {
+  from {
+    opacity: 0;
+    transform: translateY(1000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* feature items slide in one by one */
+.feature-item {
+  animation: featureSlideIn ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+  animation-fill-mode: both;
+}
+
+.feature-item:nth-child(1) {
+  animation-delay: 0s;
+}
+.feature-item:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.feature-item:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.feature-item:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes featureSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* flash-sale title pop when in view */
+.flash-title {
+  animation: flashTitlePop ease-out;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  animation-fill-mode: both;
+}
+
+@keyframes flashTitlePop {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* countdown boxes pop when in view */
+.time-box {
+  animation: timeBoxPop ease-out;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes timeBoxPop {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(30rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }

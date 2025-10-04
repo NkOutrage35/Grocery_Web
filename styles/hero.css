@@ -70,3 +70,65 @@ header {
   top: 14rem;
   left: 10rem;
 }
+
+/* Animate hero text fade-up */
+.hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroTextFadeUp 1.2s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes heroTextFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero image fade from right */
+.hero-image {
+  opacity: 0;
+  transform: translateX(60px);
+  animation: heroImageSlideIn 1.4s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes heroImageSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Paper bag soft fade in */
+#paper-bag {
+  opacity: 0;
+  animation: paperBagFade 2s ease-out forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes paperBagFade {
+  to {
+    opacity: 0.2;
+  }
+}
+
+/* Floating background ellipses */
+#ellipse1, #ellipse2 {
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Optional subtle scale on scroll (parallax-like) */
+.hero {
+  will-change: transform;
+}

@@ -3,7 +3,6 @@
   margin-top: -13rem;
 }
 
-
 /* Title */
 .flash-title2 {
   position: relative;
@@ -127,4 +126,70 @@
     width: 90%;
     max-width: none;
   }
+}
+
+/* Fade/slide the title in from the top */
+.flash-title2 {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: reviewTitleFade 0.9s ease-out;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes reviewTitleFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade/slide the decorative fruits from left */
+.grocery-decorative-fruits {
+  animation: fruitFadeLeft linear;
+  animation-timeline: view();
+  animation-range: entry 10% cover 45%;
+  animation-fill-mode: both;
+}
+
+@keyframes fruitFadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20rem) rotate(112.64deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(112.64deg);
+  }
+}
+
+/* Review cards fade up individually */
+.review-card {
+  animation: reviewCardFade 0.8s ease-out;
+  animation-timeline: view();
+  animation-range: entry 5% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes reviewCardFade {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional stagger for nicer effect */
+.review-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.review-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.review-card:nth-child(4) {
+  animation-delay: 0.3s;
 }

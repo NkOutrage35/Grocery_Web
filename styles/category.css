@@ -24,31 +24,59 @@
   padding-left: 5.5rem;
 }
 
+.category-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+}
+
 .category-container {
+  width: 98.3rem;
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: scroll;
   gap: 3rem;
-  padding: 3.5rem 5.5rem;
+  padding: 3.5rem 2rem;
+}
+
+.category-container::-webkit-scrollbar {
+  display: none;
+}
+
+.view-all-enabled {
+  flex-wrap: wrap;
+  overflow-x: visible;
+  white-space: normal;
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
 .category-card {
   position: relative;
+  flex: none;
   background: #fff;
   border: 2.4px solid transparent;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 250px;
   height: 250px;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .category-container img {
   position: relative;
   top: 10%;
   left: 7.5%;
-  width: 88%;
+  width: 80%;
   height: 65%;
   object-fit: cover;
 }
@@ -74,7 +102,6 @@
   align-items: center;
   display: flex;
   position: relative;
-  top: 5rem;
   left: -1rem;
 }
 
@@ -90,8 +117,12 @@
   align-items: center;
   display: flex;
   position: relative;
-  top: 5rem;
   right: -1rem;
+}
+
+.scroll2:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .view-all {
@@ -109,4 +140,130 @@
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+/* === Scroll-driven animations for categories === */
+
+/* fade in from left for the heading */
+.category-header h2 {
+  animation: catHeadingLeft linear;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes catHeadingLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-15rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    animation-duration: 1s;
+  }
+}
+
+/* fade in from right for the plant image */
+.category-header .plant {
+  animation: catPlantRight linear;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes catPlantRight {
+  from {
+    opacity: 0;
+    transform: translateX(15rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    animation-duration: 2s;
+  }
+}
+
+/* container fade */
+.category-container {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: catContainerFade 1s ease-out;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes catContainerFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* cards slide up individually */
+.category-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: catCardSlideUp 0.8s ease-out;
+  animation-timeline: view();
+  animation-range: entry 10% cover 50%;
+  animation-fill-mode: both;
+}
+
+.category-card:nth-child(1) {
+  animation-delay: 0s;
+}
+.category-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.category-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.category-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes catCardSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* scroll buttons subtle pulse on hover */
+#scroll2-left,
+#scroll2-right {
+  animation: pulse3 0.6s linear;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes pulse3 {
+  from {
+    transform: translateY(20rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* view-all button fade in */
+.view-all {
+  animation: viewAllCatFade 0.8s linear;
+  animation-timeline: view();
+  animation-range: entry 20% cover 60%;
+  animation-fill-mode: both;
+}
+
+@keyframes viewAllCatFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

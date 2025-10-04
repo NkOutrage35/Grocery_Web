@@ -9,8 +9,11 @@
 .card-and-scroll-wrapper {
   display: flex;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
   justify-content: center;
+  box-sizing: border-box;
+  margin-left: 2rem;
+  margin-right: 1.2rem;
 }
 
 #scroll-left {
@@ -26,7 +29,8 @@
   display: flex;
   position: relative;
   top: 1rem;
-  left: 1.5rem;
+  left: -1.5rem;
+  z-index: 5;
 }
 
 #scroll-right {
@@ -42,23 +46,43 @@
   display: flex;
   position: relative;
   top: 1rem;
-  right: 1.5rem;
+  left: 1.5rem;
+  z-index: 5;
 }
+
 .scroll:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
 .item-cards-container {
+  width: 95rem;
+  max-width: 87%;
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: scroll;
   gap: 1rem;
-  padding: 4rem;
+  padding: 1rem; 
+  box-sizing: border-box;
+}
+
+.item-cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.view-all-enabled {
+  flex-wrap: wrap;
+  overflow-x: visible;
+  white-space: normal;
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
 .item-card {
   position: relative;
+  flex: none;
   background: #fff;
   border: 2.4px solid transparent;
   border-radius: 1rem;
@@ -68,13 +92,13 @@
   background-clip: padding-box, border-box;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 250px;
+  width: 220px;
 }
 
 .item-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item-image {
@@ -161,9 +185,9 @@
 .view-all {
   padding: 0.75rem;
   margin-top: -3rem;
-  width: 10%;
+  width: fit-content; /* changed from fixed width */
   position: relative;
-  right: -85rem;
+  right: 0; /* removed large negative offset */
   top: 4rem;
   color: #2bc645;
   font-size: 1.25rem;
@@ -173,4 +197,22 @@
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+/* scroll buttons subtle pulse on hover */
+#scroll-left,
+#scroll-right {
+  animation: pulse2 0.6s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+  animation-fill-mode: both;
+}
+
+@keyframes pulse2 {
+  from {
+    transform: translateY(10rem);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
