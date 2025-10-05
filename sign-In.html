@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - GrociFy</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/sign-In.css" />
+    <script
+      src="https://kit.fontawesome.com/2ce14ed893.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h1 id="sign-up-title">Sign Up</h1>
+
+      <form action="/submit-signup" method="POST">
+        <div class="input_field" id="username-field">
+          <i class="fa-solid fa-user"></i>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="input_field">
+          <i class="fa-solid fa-envelope"></i>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="input_field">
+          <i class="fa-solid fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <p id="forgot-password">
+          Lost your password? <a href="index.html">Click here</a>
+        </p>
+        <br />
+
+        <div class="btn-container">
+          <button type="submit" id="sign-up-btn">Sign Up</button>
+          <button type="button" id="sign-in-btn" class="sign-in-disabled">
+            Sign In
+          </button>
+        </div>
+      </form>
+
+      <script>
+        const signUpBtn = document.getElementById("sign-up-btn");
+        const signInBtn = document.getElementById("sign-in-btn");
+        const usernameField = document.getElementById("username-field");
+        const signUpTitle = document.getElementById("sign-up-title");
+        const forgotPassword = document.getElementById("forgot-password");
+
+        forgotPassword.style.display = "none";
+
+        signUpBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          usernameField.style.maxHeight = "5rem";
+          signUpTitle.textContent = "Sign Up";
+          forgotPassword.style.display = "none";
+          signInBtn.classList.add("sign-in-disabled");
+          signUpBtn.classList.remove("sign-in-disabled");
+        });
+
+        signInBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          usernameField.style.maxHeight = "0";
+          signUpTitle.textContent = "Sign In";
+          forgotPassword.style.display = "block";
+          signUpBtn.classList.add("sign-in-disabled");
+          signInBtn.classList.toggle("sign-in-disabled");
+        });
+      </script>
+    </div>
+  </body>
+</html>

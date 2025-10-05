@@ -17,7 +17,7 @@ header {
   left: 14rem;
   width: 50rem;
   height: 50rem;
-  z-index: 2; /* Places the ellipse behind the main content */
+  z-index: 2;
 }
 
 #ellipse2 {
@@ -31,7 +31,7 @@ header {
 
 .hero-content {
   position: relative;
-  z-index: 2; /* Ensures the text is on top of the ellipses */
+  z-index: 2;
 }
 
 .hero-image {
