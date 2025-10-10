@@ -92,7 +92,8 @@
   background-clip: padding-box, border-box;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 220px;
+  width: 210px;
+  height: 300px;
 }
 
 .item-card:hover {
@@ -185,9 +186,9 @@
 .view-all {
   padding: 0.75rem;
   margin-top: -3rem;
-  width: fit-content; /* changed from fixed width */
+  width: fit-content; 
   position: relative;
-  right: 0; /* removed large negative offset */
+  right: 0;
   top: 4rem;
   color: #2bc645;
   font-size: 1.25rem;

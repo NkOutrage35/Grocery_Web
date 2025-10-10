@@ -38,6 +38,7 @@
   overflow-x: scroll;
   gap: 3rem;
   padding: 3.5rem 2rem;
+  margin-bottom: -5rem;
 }
 
 .category-container::-webkit-scrollbar {
@@ -62,8 +63,8 @@
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 .category-card:hover {
@@ -130,8 +131,8 @@
   margin-top: -3rem;
   width: 10%;
   position: relative;
-  right: -85rem;
-  top: 4rem;
+  right: -70rem;
+  top: 3rem;
   color: #2bc645;
   font-size: 1.25rem;
   font-weight: bold;
@@ -236,7 +237,7 @@
 #scroll2-right {
   animation: pulse3 0.6s linear;
   animation-timeline: view();
-  animation-range: entry 20% cover 50%;
+  animation-range: entry 20% cover 40%;
   animation-fill-mode: both;
 }
 
@@ -253,7 +254,7 @@
 .view-all {
   animation: viewAllCatFade 0.8s linear;
   animation-timeline: view();
-  animation-range: entry 20% cover 60%;
+  animation-range: entry 20% cover 50%;
   animation-fill-mode: both;
 }
 

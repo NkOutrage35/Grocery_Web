@@ -1,5 +1,6 @@
 .content-section {
   display: flex;
+  margin-bottom: 7rem;
 }
 .content {
   padding: 4rem;
@@ -17,18 +18,18 @@
   height: 70%;
   position: absolute;
   left: 3.5rem;
-  top: 76.5rem;
+  top: 61.25rem;
 }
 
 #content-text {
   position: relative;
   font-weight: 800;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-style: Bold;
   line-height: 3.5rem;
   color: var(--color-main-text);
   width: 70%;
-  left: -13rem;
+  left: -10rem;
   top: 5rem;
 }
 
@@ -38,10 +39,10 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   position: relative;
-  top: 20rem;
-  right: 7rem;
+  top: 16rem;
+  right: 5rem;
 }
 
 .feature-item {
@@ -49,7 +50,7 @@
   border-radius: 5px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   padding: 1rem 1.5rem;
-  width: 27rem;
+  width: 26.5rem;
   display: flex;
   align-items: center;
   gap: 1rem; /* spacing between dot and text */
@@ -135,7 +136,7 @@
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 20rem;
+  width: 17rem;
 }
 
 /* Number styling */
@@ -274,5 +275,147 @@
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
+  }
+}
+
+/* ========================================================================= */
+/* UPDATED MOBILE STYLES */
+/* ========================================================================= */
+
+@media (max-width: 768px) {
+  /* --- General Layout Adjustments --- */
+  .content-section {
+    flex-direction: column;
+    margin-bottom: 0rem;
+  }
+
+  .content {
+    padding: 2rem 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .content-img.img1 {
+    width: 70%;
+    max-width: 400px;
+    height: auto;
+    margin: 0 auto 1rem auto;
+    margin-bottom: -13.57rem;
+    display: block;
+  }
+
+  .content-img.img2 {
+    position: relative;
+    width: 88%;
+    height: auto;
+    left: 2rem;
+    top: 2.3rem;
+    margin: 1rem auto 2rem auto;
+    display: block;
+    z-index: 0;
+  }
+
+  #content-text {
+    position: relative;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .features {
+    position: relative;
+    top: 0;
+    right: 0;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+    padding: 0.8rem 1rem;
+  }
+
+  .feature-item p {
+    font-size: 1.2rem;
+  }
+
+  .flash-sale {
+    margin: 20px 0;
+  }
+
+  .flash-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    width: 90%;
+    box-sizing: border-box;
+  }
+
+  .flash-title::before,
+  .flash-title::after {
+    width: 4rem;
+  }
+
+  .flash-title::before {
+    left: 1rem;
+  }
+
+  .flash-title::after {
+    right: 1rem;
+  }
+
+  .countdown {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .time-box {
+    width: 4.6rem;
+    flex-shrink: 0;
+    padding: 0.5rem 0.3rem;
+  }
+
+  .time-box .time,
+  .time-box .label {
+    font-size: 1rem; /* Smaller, clearer font for small boxes */
+  }
+
+  /* --- Animation Adjustments (Keep them simple for mobile) --- */
+  .content-img.img1,
+  .content-img.img2,
+  .feature-item {
+    animation-range: entry 0% cover 30%;
+  }
+
+  @keyframes flashTitlePop {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes timeBoxPop {
+    from {
+      opacity: 0;
+      transform: scale(0.5) translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
   }
 }

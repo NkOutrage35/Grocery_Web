@@ -7,24 +7,23 @@
 
 header {
   background: linear-gradient(to bottom right, #4B773B 45%, #85bb6b 65%);
-  padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #ellipse1 {
   position: absolute;
-  top: -3.5rem;
+  top: -5.5rem;
   left: 14rem;
-  width: 50rem;
+  width: 45rem;
   height: 50rem;
   z-index: 2;
 }
 
 #ellipse2 {
   position: absolute;
-  bottom: 5rem;
+  bottom: -5rem;
   left: 11rem;
-  width: 50rem;
+  width: 45rem;
   height: 50rem;
   z-index: 2;
 }
@@ -43,10 +42,10 @@ header {
 }
 
 .hero-image{
-  width: 55%;
-  height: 90%;
+  width: 53%;
+  height: 85%;
   top: 13rem;
-  right: 6rem;
+  right: 1rem;
 }
 
 #paper-bag {
@@ -55,8 +54,8 @@ header {
   bottom: 0;
   left: 42rem;
   bottom:16.5rem ;
-  width: 65%;
-  height: 110%;
+  width: 60%;
+  height: 100%;
   z-index: 1;
 }
 
@@ -67,7 +66,7 @@ header {
   letter-spacing: 8%;
   color: var(--color-text-light);
   margin: 0;
-  top: 14rem;
+  top: 11rem;
   left: 10rem;
 }
 
@@ -131,4 +130,66 @@ header {
 /* Optional subtle scale on scroll (parallax-like) */
 .hero {
   will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  /* Hide large background ellipses for mobile */
+  #ellipse1,
+  #ellipse2 {
+    display: none;
+  }
+
+  /* Stack hero text and image */
+  .hero-content {
+    font-size: 2rem;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    line-height: 120%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-image {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: auto;
+    max-width: 350px;
+    margin-top: 1rem;
+    transform: none;
+  }
+
+  #paper-bag {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-content {
+    font-size: 1.8rem;
+  }
+
+  .hero-image {
+    width: 90%;
+    max-width: 280px;
+  }
 }
