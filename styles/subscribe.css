@@ -1,6 +1,5 @@
 body {
   font-family: 'Lato', sans-serif;
-  background: var(--brand-gradient);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,6 +9,50 @@ body {
   padding: 20px;
   box-sizing: border-box;
   color: #374151;
+}
+
+.subscription-card {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 550px;
+  width: 90%;
+  text-align: center;
+}
+
+/* Use the Primary Green for main headings */
+h3 {
+  font-size: 25px;
+  color: #339944;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid rgba(16, 185, 129, 0.2);   
+  padding-bottom: 10px;
+}
+
+p {
+  margin: 0.5rem;
+  font-size: 17px;
+  color: #374151;
+  font-weight: 400;
+}
+
+
+#subscriptionMessage, #paymentMessage, #unsubscribeMessage {
+  font-weight: 600;
+  padding: 5px 0;
+  color: #FFB800;
+}
+
+#home-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #339944;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 #SUBSCRIPTION {
@@ -24,7 +67,7 @@ body {
   appearance: none;
   width: 24px;
   height: 24px;
-  border: 2px solid #22c55e;
+  border: 2px solid #339944;
   border-radius: 6px;
   position: relative;
   cursor: pointer;
@@ -33,7 +76,7 @@ body {
 }
 
 #subscribeBtn:checked {
-  border-color: #22c55e;
+  border-color: #339944;
 }
 
 #subscribeBtn:checked::after {
@@ -43,7 +86,7 @@ body {
   left: 6px;
   width: 6px;
   height: 12px;
-  border: solid #ffb800 ;   
+  border: solid #FFB800;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
 }
@@ -52,37 +95,48 @@ body {
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
-  color: #047857;
-}
-
-h3 {
-  font-size: 25px;
-  color: #065f46; 
-  margin-bottom: 20px;
-  font-weight: bold;
+  color: #339944;
 }
 
 #RADIO {
-  display: block;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 30px;
+  padding: 10px;
+  border: 1px solid rgba(16, 185, 129, 0.2); 
+  border-radius: 8px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.radio:hover {
+  background-color: #F0FDF4;
 }
 
 #RADIO input[type="radio"] {
   appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #22c55e;
+  border: 2px solid #339944; 
   border-radius: 50%;
   position: relative;
   cursor: pointer;
   outline: none;
   transition: all 0.2s ease-in-out;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 #RADIO input[type="radio"]:checked {
-  border-color: #22c55e;
+  border-color: #339944;
 }
 
 #RADIO input[type="radio"]:checked::before {
@@ -92,26 +146,24 @@ h3 {
   left: 4px;
   width: 8px;
   height: 8px;
-  background-color: #ffb800 ;
+  background-color: #FFB800; 
   border-radius: 50%;
+}
+
+#RADIO input[type="radio"]:checked ~ label {
+  font-weight: bold;
+  color: #FFB800;
 }
 
 #RADIO label {
   font-size: 15px;
-  color: #047857; 
+  color: #339944;
   cursor: pointer;
   align-items: center;
 }
 
-.radio {
-  display: flex;
-  align-items: center;
-  justify-items: space-evenly;
-  margin-bottom: 10px;
-}
-
 button {
-  background-color: #10b981;
+  background-color: #339944;
   color: white;
   padding: 12px 25px;
   border: none;
@@ -124,46 +176,34 @@ button {
   width: 100%;
   max-width: 200px;
   text-align: center;
+  margin: 15px auto 5px auto;
+  display: block;
 }
 
 button:hover {
-  background-color: #34d399;
+  background-color: #34D399; 
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(52, 211, 153, 0.5);
 }
 
 #unsubscribeBtn {
-  background-color: #dc2626;
-  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+  background-color: transparent;
+  color: #339944;
+  border: 2px solid #339944;
+  box-shadow: none;
 }
 
 #unsubscribeBtn:hover {
-  background-color: #ef4444;
-  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.5);
+  background-color: #F0FDF4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.2);
 }
 
-p {
-  margin: 0.5rem;
-  font-size: 17px;
-  color: #374151; 
-  font-weight: 400;
-}
-
-#home-link {
-  position: fixed;
-  bottom: 4rem;
-  width: 2rem;
-  color: #10b981;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-/* Responsive */
 @media (max-width: 600px) {
-  .form-container {
+  .subscription-card {
     padding: 20px;
   }
-
+  
   #SUBSCRIPTION {
     flex-direction: column;
     gap: 10px;

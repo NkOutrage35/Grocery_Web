@@ -95,21 +95,17 @@ viewAllBtn.forEach((btn) => {
 });
 
 /* See More Functionality */
-const seeMoreBtn = document.querySelectorAll(".see-more");
-const seeMoreProductsGrid = document.querySelector(".products-grid");
+const seeMoreBtn = document.getElementById("seeMoreBtn");
+const productGrid = document.getElementById("productGrid");
 
-seeMoreBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    seeMoreProductsGrid.classList.toggle("view-all-enabled");
+seeMoreBtn.addEventListener("click", () => {
+  productGrid.classList.toggle("see-more-enabled");
 
-    if (seeMoreProductsGrid.classList.contains("view-all-enabled")) {
-      btn.textContent = "SEE MORE";
-      scrollButtonsWrapper.style.justifyContent = "flex-start";
-    } else {
-      btn.textContent = "SEE LESS";
-      scrollButtonsWrapper.style.justifyContent = "center";
-    }
-  });
+  if (productGrid.classList.contains("see-more-enabled")) {
+    seeMoreBtn.textContent = "SEE LESS";
+  } else {
+    seeMoreBtn.textContent = "SEE MORE";
+  }
 });
 
 /*
@@ -185,13 +181,13 @@ viewAllBtn.addEventListener("click", () => {
 });
  */
 
-/* --- Quantity Controls (Event Delegation) --- */
+/* --- Quantity Controls --- */
 const productsGrid = document.querySelector(".products-grid");
 
 productsGrid.addEventListener("click", (e) => {
   const qtyControls = e.target.parentElement;
   const qtyDisplay = qtyControls.querySelector(".qty-display");
-  let currentQty = parseInt(qtyDisplay.textContent);
+  let currentQty = parseInt(qtyDisplay.value);
 
   if (e.target.classList.contains("increment")) {
     currentQty++;
@@ -201,7 +197,7 @@ productsGrid.addEventListener("click", (e) => {
     }
   }
 
-  qtyDisplay.textContent = currentQty;
+  qtyDisplay.value = currentQty;
 });
 
 /* --- Category Horizontal Scroll --- */

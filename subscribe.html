@@ -13,41 +13,45 @@
   </head>
 
   <body>
-    <div id="SUBSCRIPTION">
-      <input type="checkbox" id="subscribeBtn" />
-      <label for="subscribeBtn">Subscribe</label>
-      <p id="subscriptionMessage"></p>
+    <div class="subscription-card">
+      <div id="SUBSCRIPTION">
+        <input type="checkbox" id="subscribeBtn" />
+        <label for="subscribeBtn">Subscribe</label>
+        <p id="subscriptionMessage"></p>
+      </div>
+
+      <h3>SELECT PAYMENT METHOD:</h3>
+
+      <div id="RADIO">
+        <div class="radio">
+          <input type="radio" id="visaBtn" name="paymentMethod" />
+          <label for="visaBtn">VISA</label><br />
+        </div>
+        <div class="radio">
+          <input type="radio" id="masterCardBtn" name="paymentMethod" />
+          <label for="masterCardBtn">MASTERCARD</label><br />
+        </div>
+        <div class="radio">
+          <input type="radio" id="paypalBtn" name="paymentMethod" />
+          <label for="paypalBtn">PAYPAL</label><br />
+        </div>
+        <div class="radio">
+          <input type="radio" id="momoBtn" name="paymentMethod" />
+          <label for="momoBtn">Mobile Money</label><br />
+        </div>
+      </div>
+
+      <button type="submit" id="submitBtn">Submit</button>
+      <p id="paymentMessage"></p>
+
+      <button type="submit" id="unsubscribeBtn">Unsubscribe</button>
+      <p id="unsubscribeMessage"></p>
+
+      <a href="index.html" id="home-link" title="Home"
+        ><i class="fa-solid fa-house"></i
+      ></a>
     </div>
-
-    <h3>SELECT PAYMENT METHOD:</h3>
-
-    <div id="RADIO">
-      <div class="radio">
-        <input type="radio" id="visaBtn" name="paymentMethod" />
-        <label for="visaBtn">VISA</label><br />
-      </div>
-      <div class="radio">
-        <input type="radio" id="masterCardBtn" name="paymentMethod" />
-        <label for="masterCardBtn">MASTERCARD</label><br />
-      </div>
-      <div class="radio">
-        <input type="radio" id="paypalBtn" name="paymentMethod" />
-        <label for="paypalBtn">PAYPAL</label><br />
-      </div>
-      <div class="radio">
-        <input type="radio" id="momoBtn" name="paymentMethod" />
-        <label for="momoBtn">Mobile Money</label><br /><br />
-      </div>
-    </div>
-
-    <button type="submit" id="submitBtn">Submit</button>
-    <p id="paymentMessage"></p>
-
-    <button type="submit" id="unsubscribeBtn">Unsubscribe</button>
-    <p id="unsubscribeMessage"></p>
-
-    <a href="index.html" id="home-link" title="Home"><i class="fa-solid fa-house"></i></a>
-
+    
     <script>
       const subscribeBtn = document.getElementById("subscribeBtn");
       const visaBtn = document.getElementById("visaBtn");

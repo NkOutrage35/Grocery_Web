@@ -43,7 +43,9 @@
           <ul class="nav-links">
             <li><a href="#home" class="nav-link nav-link1">Home</a></li>
             <li><a href="about.html" class="nav-link nav-link1">About</a></li>
-            <li><a href="contact.html" class="nav-link nav-link1">Contact</a></li>
+            <li>
+              <a href="contact.html" class="nav-link nav-link1">Contact</a>
+            </li>
             <li>
               <a href="#cart" class="nav-link">
                 <img src="images/Vector (1).svg" alt="Cart" id="cart-icon" />
@@ -393,7 +395,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -418,7 +420,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -443,7 +445,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -468,7 +470,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -493,7 +495,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -518,7 +520,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -543,7 +545,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -564,7 +566,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -589,7 +591,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -614,7 +616,7 @@
           <div class="product-actions">
             <div class="qty-controls">
               <button class="qty-btn decrement">-</button>
-              <span class="qty-display">0</span>
+              <input type="number" min="0" value="0" class="qty-display" />
               <button class="qty-btn increment">+</button>
             </div>
             <button class="add-btn">
@@ -628,7 +630,9 @@
           </div>
         </div>
       </div>
-      <p class="see-more" id="seeMoreBtn">SEE MORE</p>
+      <div class="see-more-container">
+        <p class="see-more" id="seeMoreBtn">SEE MORE</p>
+      </div>
     </section>
 
     <!-- Reviews Section -->
@@ -698,20 +702,26 @@
               <p>Simple and efficient to use!</p>
             </div>
             <div class="download-buttons">
-              <a href="https://apps.apple.com/us/apps" class="download-btn btn-left apple-store">
+              <a
+                href="https://apps.apple.com/us/apps"
+                class="download-btn btn-left apple-store"
+              >
                 <img src="images/Vector (2).svg" alt="Apple Store" />
                 <div>
                   <span>Download on the</span>
                   <strong>Apple store</strong>
                 </div>
               </a>
-              <a href="https://play.google.com/store/apps" class="download-btn btn-right google-play">
+              <a
+                href="https://play.google.com/store/apps"
+                class="download-btn btn-right google-play"
+              >
                 <img
                   src="images/download__2_-removebg-preview 1.svg"
                   alt="Google Play"
                 />
                 <div>
-                  <span >Download on the</span>
+                  <span>Download on the</span>
                   <strong>Google Play store</strong>
                 </div>
               </a>
@@ -751,9 +761,15 @@
             latest products and Services.
           </p>
           <div class="socials">
-            <a href="https://www.facebook.com/Meta"><img src="images/image 3.svg" alt="Social Icon 3" /></a>
-            <a href="https://twitter.com/Meta"><img src="images/image 2.svg" alt="Social Icon 2" /></a>
-            <a href="https://www.instagram.com/Meta"><img src="images/image 1.svg" alt="Social Icon 1" /></a>
+            <a href="https://www.facebook.com/Meta"
+              ><img src="images/image 3.svg" alt="Social Icon 3"
+            /></a>
+            <a href="https://twitter.com/Meta"
+              ><img src="images/image 2.svg" alt="Social Icon 2"
+            /></a>
+            <a href="https://www.instagram.com/Meta"
+              ><img src="images/image 1.svg" alt="Social Icon 1"
+            /></a>
           </div>
         </div>
 

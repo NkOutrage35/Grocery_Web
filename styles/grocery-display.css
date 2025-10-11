@@ -11,14 +11,20 @@
 
 /* Container grid */
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  overflow-x: scroll;
-  width: 80%;
-  gap: 3.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1.5rem;
   padding: 1rem;
-  margin: 1rem auto;
-  margin-bottom: 8rem;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.see-more-enabled {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  overflow-x: hidden;
 }
 
 /* Card styling */
@@ -30,9 +36,10 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  flex: 0 0 auto;
   justify-content: space-between;
-  width: 120%;
-  height: 110%;
+  width: 13rem;
+  height: 17rem;
   box-sizing: border-box;
 }
 
@@ -64,13 +71,13 @@
   height: 16px;
 }
 
-/* Action buttons row */
 .product-actions {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
 }
+
 /* Quantity controls container */
 .qty-controls {
   display: flex;
@@ -80,7 +87,6 @@
   border-radius: 0.5rem;
 }
 
-/* Quantity buttons */
 .qty-btn {
   width: 1.3rem;
   height: 1.6rem;
@@ -93,14 +99,23 @@
   cursor: pointer;
 }
 
-/* Quantity display */
-.qty-display {
-  min-width: 20px;
+.qty-controls input {
+  border: none;
+  outline: none;
+  max-width: 1.5rem;
+  height: 1.6rem;
+  align-items: center;
   text-align: center;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 600;
   color: #fff;
   background-color: #289402;
+  -moz-appearance: textfield;
+}
+.qty-controls input::-webkit-outer-spin-button,
+.qty-controls input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Add to cart button */
@@ -129,19 +144,32 @@
   margin: 5rem 0 3rem;
   cursor: pointer;
   color: #2bc645;
-  font-size: 1.25rem;
   font-weight: bold;
   border: 2px solid #339944;
   border-radius: 1rem;
   text-align: center;
-  width: 10%;
+  width: 13%;
   padding: 0.75rem;
   position: relative;
-  left: 48rem;
+  left: 38rem;
+  bottom: 2.5rem;
   transition: background-color 0.3s ease;
 }
+.see-more {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2bc645;
+  border: 2px solid #339944;
+  border-radius: 1rem;
+  padding: 0.75rem 2rem;
+  margin: 3rem auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
 
-/* Grocery section header fade-in from top */
 #grocery-section-header {
   opacity: 0;
   transform: translateY(-20px);
@@ -158,9 +186,7 @@
   }
 }
 
-/* Product cards fade-in & rise up individually */
 .product-card {
-  /* keep your existing styles */
   animation: groceryCardFade ease-out;
   animation-timeline: view();
   animation-range: entry 5% cover 50%;
@@ -178,7 +204,6 @@
   }
 }
 
-/* Optional: add a tiny stagger effect using nth-child */
 .product-card:nth-child(2) {
   animation-delay: 0.1s;
 }
