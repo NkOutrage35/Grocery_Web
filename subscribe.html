@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/subscribe.css" />
+    <script
+      src="https://kit.fontawesome.com/2ce14ed893.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div id="SUBSCRIPTION">
+      <input type="checkbox" id="subscribeBtn" />
+      <label for="subscribeBtn">Subscribe</label>
+      <p id="subscriptionMessage"></p>
+    </div>
+
+    <h3>SELECT PAYMENT METHOD:</h3>
+
+    <div id="RADIO">
+      <div class="radio">
+        <input type="radio" id="visaBtn" name="paymentMethod" />
+        <label for="visaBtn">VISA</label><br />
+      </div>
+      <div class="radio">
+        <input type="radio" id="masterCardBtn" name="paymentMethod" />
+        <label for="masterCardBtn">MASTERCARD</label><br />
+      </div>
+      <div class="radio">
+        <input type="radio" id="paypalBtn" name="paymentMethod" />
+        <label for="paypalBtn">PAYPAL</label><br />
+      </div>
+      <div class="radio">
+        <input type="radio" id="momoBtn" name="paymentMethod" />
+        <label for="momoBtn">Mobile Money</label><br /><br />
+      </div>
+    </div>
+
+    <button type="submit" id="submitBtn">Submit</button>
+    <p id="paymentMessage"></p>
+
+    <button type="submit" id="unsubscribeBtn">Unsubscribe</button>
+    <p id="unsubscribeMessage"></p>
+
+    <a href="index.html" id="home-link" title="Home"><i class="fa-solid fa-house"></i></a>
+
+    <script>
+      const subscribeBtn = document.getElementById("subscribeBtn");
+      const visaBtn = document.getElementById("visaBtn");
+      const masterCardBtn = document.getElementById("masterCardBtn");
+      const paypalBtn = document.getElementById("paypalBtn");
+      const momoBtn = document.getElementById("momoBtn");
+      const subscriptionMessage = document.getElementById(
+        "subscriptionMessage"
+      );
+      const paymentMessage = document.getElementById("paymentMessage");
+      const unsubscribeMessage = document.getElementById("unsubscribeMessage");
+      const submitBtn = document.getElementById("submitBtn");
+      const unsubscribeBtn = document.getElementById("unsubscribeBtn");
+
+      subscribeBtn.addEventListener("change", function () {
+        if (subscribeBtn.checked) {
+          subscriptionMessage.textContent = `You have subscribed. Please choose a Payment Method`;
+        } else {
+          subscriptionMessage.textContent = ``;
+          paymentMessage.textContent = ``;
+        }
+      });
+
+      submitBtn.onclick = function () {
+        unsubscribeMessage.textContent = ``;
+
+        if (!subscribeBtn.checked) {
+          paymentMessage.textContent = `Please subscribe first before choosing a payment option`;
+          return;
+        }
+
+        if (visaBtn.checked) {
+          paymentMessage.textContent = `You are paying via VISA.`;
+        } else if (masterCardBtn.checked) {
+          paymentMessage.textContent = `You are paying via MasterCard.`;
+        } else if (paypalBtn.checked) {
+          paymentMessage.textContent = `You are paying via PayPal.`;
+        } else if (momoBtn.checked) {
+          paymentMessage.textContent = `You are paying via MOMO.`;
+        } else {
+          paymentMessage.textContent = `Please choose a payment option`;
+        }
+      };
+
+      unsubscribeBtn.onclick = function () {
+        unsubscribeMessage.textContent = `You have Unsubscribed.`;
+        subscriptionMessage.textContent = ``;
+        paymentMessage.textContent = ``;
+        subscribeBtn.checked = false;
+        visaBtn.checked = false;
+        masterCardBtn.checked = false;
+        paypalBtn.checked = false;
+        momoBtn.checked = false;
+      };
+    </script>
+  </body>
+</html>
