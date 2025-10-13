@@ -70,6 +70,23 @@
   display: none;
 }
 
+#view-all1 {
+  padding: 0.75rem;
+  margin-top: -3rem;
+  width: 10%;
+  position: relative;
+  right: -70rem;
+  top: 2.25rem;
+  color: #2bc645;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: 2px solid #339944;
+  border-radius: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 .view-all-enabled {
   flex-wrap: wrap;
   overflow-x: visible;

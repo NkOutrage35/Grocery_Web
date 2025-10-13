@@ -46,8 +46,7 @@ body {
 }
 
 #home-link {
-  position: absolute;
-  top: 34rem;
+  position: relative;
   left: 47%;
   color: #066337;
   font-size: 1.25rem;

@@ -26,6 +26,7 @@
             placeholder="Username"
             required
           />
+          <div class="error-message"></div>
         </div>
         <div class="input_field">
           <i class="fa-solid fa-envelope"></i>
@@ -36,6 +37,7 @@
             placeholder="Email"
             required
           />
+          <div class="error-message"></div>
         </div>
         <div class="input_field">
           <i class="fa-solid fa-lock"></i>
@@ -46,6 +48,7 @@
             placeholder="Password"
             required
           />
+          <div class="error-message"></div>
         </div>
 
         <p id="forgot-password">
@@ -54,24 +57,128 @@
         <br />
 
         <div class="btn-container">
-          <button type="submit" id="sign-up-btn">Sign Up</button>
-          <button type="button" id="sign-in-btn" class="sign-in-disabled">
+          <button type="submit" formaction="registered.html" id="sign-up-btn">
+            Sign Up
+          </button>
+          <button
+            type="button"
+            formaction="registered.html"
+            id="sign-in-btn"
+            class="sign-in-disabled"
+          >
             Sign In
           </button>
         </div>
       </form>
 
       <script>
+        const form = document.querySelector("form");
         const signUpBtn = document.getElementById("sign-up-btn");
         const signInBtn = document.getElementById("sign-in-btn");
         const usernameField = document.getElementById("username-field");
         const signUpTitle = document.getElementById("sign-up-title");
         const forgotPassword = document.getElementById("forgot-password");
 
+        const usernameInput = document.getElementById("username");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+
+        let isFormValidated = false;
+
         forgotPassword.style.display = "none";
 
+        /* --- HELPER FUNCTIONS --- */
+        const setError = (element, message) => {
+          const inputControl = element.parentElement;
+          const errorDisplay = inputControl.querySelector(".error-message");
+
+          errorDisplay.innerText = message;
+          inputControl.classList.add("error");
+          inputControl.classList.remove("success");
+          // IMPORTANT: Reset the state flag immediately on error
+          isFormValidated = false;
+        };
+
+        const setSuccess = (element) => {
+          const inputControl = element.parentElement;
+          const errorDisplay = inputControl.querySelector(".error-message");
+
+          errorDisplay.innerText = "";
+          inputControl.classList.add("success");
+          inputControl.classList.remove("error");
+        };
+
+        const isValidEmail = (email) => {
+          const regex =
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return regex.test(String(email).toLowerCase());
+        };
+
+        const validateInput = () => {
+          let isValid = true;
+
+          // Get and trim values
+          const usernameValue = usernameInput.value.trim();
+          const emailValue = emailInput.value.trim();
+          const passwordValue = passwordInput.value.trim();
+
+          // --- USERNAME ---
+          if (usernameValue === "") {
+            setError(usernameInput, "Username is required");
+            isValid = false;
+          } else {
+            setSuccess(usernameInput);
+          }
+
+          // --- EMAIL ---
+          if (emailValue === "") {
+            setError(emailInput, "Email is required");
+            isValid = false;
+          } else if (!isValidEmail(emailValue)) {
+            setError(emailInput, "Invalid email format");
+            isValid = false;
+          } else {
+            setSuccess(emailInput);
+          }
+
+          // --- PASSWORD ---
+          if (passwordValue === "") {
+            setError(passwordInput, "Password is required");
+            isValid = false;
+          } else if (passwordValue.length < 6) {
+            setError(passwordInput, "Password must be at least 6 characters");
+            isValid = false;
+          } else {
+            setSuccess(passwordInput);
+          }
+
+          return isValid;
+        };
+
+        /* --- SIGN UP BUTTON LISTENER (Two-Click Logic) --- */
         signUpBtn.addEventListener("click", (e) => {
           e.preventDefault();
+
+          if (isFormValidated) {
+            window.location.href = "registered.html";
+            return;
+          }
+
+          const isCurrentlyValid = validateInput();
+
+          if (isCurrentlyValid) {
+            isFormValidated = true;
+
+            console.log("Form is valid. Click again to sign up.");
+          } else {
+            // Validation Failed: Reset button feedback
+            signUpBtn.textContent = "Sign Up";
+            signUpBtn.style.backgroundColor = "";
+            signUpBtn.style.color = "";
+            signUpBtn.style.fontWeight = "600";
+            console.log("Validation failed. Please correct errors.");
+          }
+
           usernameField.style.maxHeight = "5rem";
           signUpTitle.textContent = "Sign Up";
           forgotPassword.style.display = "none";
@@ -81,6 +188,26 @@
 
         signInBtn.addEventListener("click", (e) => {
           e.preventDefault();
+
+          // 1. Check for SECOND CLICK
+          if (isFormValidated) {
+            window.location.href = "registered.html";
+            return;
+          }
+
+          // 2. FIRST CLICK: Run Validation
+          const isCurrentlyValid = validateInput();
+
+          if (isCurrentlyValid) {
+            isFormValidated = true;
+
+            // Ensure the active button style is used
+          } else {
+            // Validation Failed: Reset button feedback
+            resetButtonStyles(signInBtn);
+            signInBtn.classList.remove("sign-in-disabled");
+          }
+
           usernameField.style.maxHeight = "0";
           signUpTitle.textContent = "Sign In";
           forgotPassword.style.display = "block";

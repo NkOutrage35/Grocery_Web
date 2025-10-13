@@ -14,7 +14,7 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 1.5rem;
+  gap: 1rem;
   padding: 1rem;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -38,7 +38,7 @@
   flex-direction: column;
   flex: 0 0 auto;
   justify-content: space-between;
-  width: 13rem;
+  width: 14rem;
   height: 17rem;
   box-sizing: border-box;
 }
@@ -64,11 +64,6 @@
   font-weight: 400;
   color: #666;
   margin-bottom: 12px;
-}
-
-#add-to-cart-icon {
-  width: 16px;
-  height: 16px;
 }
 
 .product-actions {
@@ -110,7 +105,7 @@
   font-weight: 600;
   color: #fff;
   background-color: #289402;
-  -moz-appearance: textfield;
+  --moz-appearance: textfield;
 }
 .qty-controls input::-webkit-outer-spin-button,
 .qty-controls input::-webkit-inner-spin-button {
@@ -132,6 +127,12 @@
   cursor: pointer;
   transition: background 0.3s ease;
 }
+
+.add-btn img {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;}
 
 .add-btn:hover {
   background: #219150;

@@ -54,7 +54,7 @@ form {
 .input_field i {
   position: absolute;
   left: 12px;
-  top: 52%;
+  top: 32%;
   transform: translateY(-50%);
   color: #555;
   font-size: 1rem;
@@ -124,4 +124,39 @@ button {
   margin-bottom: 10px;
   transition: max-height 1s;
   overflow: hidden;
+}
+
+/* success and error states */
+.input_field.success input {
+  border-color: #ffb800;
+}
+.input_field.error input {
+  border-color: red;
+}
+
+/* success and error icons */
+.input_field.success::after,
+.input_field.error::after {
+  position: absolute;
+  right: 12px;
+  top: 33%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  z-index: 5;
+  font-size: 18px;
+}
+.input_field.success::after {
+  content: "\2713";
+  color: #ffb800;
+}
+.input_field.error::after {
+  content: "\00D7";
+  color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  min-height: 18px;
+  margin-top: 2px;
 }

@@ -45,7 +45,7 @@
   display: none;
 }
 
-.view-all-enabled {
+.category-container.view-all-enabled {
   flex-wrap: wrap;
   overflow-x: visible;
   white-space: normal;
@@ -126,13 +126,13 @@
   cursor: pointer;
 }
 
-.view-all {
+#view-all2 {
   padding: 0.75rem;
   margin-top: -3rem;
   width: 10%;
   position: relative;
   right: -70rem;
-  top: 3rem;
+  top: -3.5rem;
   color: #2bc645;
   font-size: 1.25rem;
   font-weight: bold;

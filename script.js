@@ -25,205 +25,25 @@ setInterval(updateCountdown, 1000);
 updateCountdown();
 /* --- End of Flash-Sale CountDown */
 
-/* --- Scroll Animation --- */
-document.addEventListener("DOMContentLoaded", () => {
-  const itemCardsContainer = document.querySelector(".item-cards-container");
-  const scrollLeft = document.getElementById("scroll-left");
-  const scrollRight = document.getElementById("scroll-right");
-
-  const scrollAmount = 478;
-
-  if (itemCardsContainer && scrollLeft && scrollRight) {
-    scrollLeft.addEventListener("click", () => {
-      itemCardsContainer.scrollBy({
-        left: -scrollAmount,
-        behavior: "smooth",
-      });
-    });
-
-    scrollRight.addEventListener("click", () => {
-      itemCardsContainer.scrollBy({
-        left: scrollAmount,
-        behavior: "smooth",
-      });
-    });
-  } else {
-    console.warn("Scroll elements not found. Check your HTML selectors.");
-  }
-});
-
-/* --- VIEW ALL Functionality --- */
-const viewAllBtn = document.querySelectorAll(".view-all");
-const itemCardsContainer = document.querySelector(".item-cards-container");
-const scrollButtonsWrapper = document.querySelector(".card-and-scroll-wrapper");
-const scrollArrows = document.querySelectorAll(".scroll");
-
-viewAllBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    itemCardsContainer.classList.toggle("view-all-enabled");
-
-    if (itemCardsContainer.classList.contains("view-all-enabled")) {
-      btn.textContent = "VIEW LESS";
-      scrollButtonsWrapper.style.justifyContent = "flex-start";
-      scrollArrows.forEach((button) => (button.style.display = "none"));
-    } else {
-      btn.textContent = "VIEW ALL";
-      scrollButtonsWrapper.style.justifyContent = "center";
-      scrollArrows.forEach((button) => (button.style.display = "flex"));
-    }
-  });
-});
-
-const viewAllCategoryContainer = document.querySelector(".category-container");
 const categoryWrapper = document.querySelector(".category-wrap");
-const scroll2Arrows = document.querySelectorAll(".scroll2");
+const viewAllBtn = document.getElementById("view-all2");
+const scroll2Arrows = document.querySelector(".scroll2");
 
-viewAllBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    viewAllCategoryContainer.classList.toggle("view-all-enabled");
+if (viewAllBtn) {
+  viewAllBtn.addEventListener("click", () => {
+    categoryContainer.classList.toggle("view-all-enabled");
 
-    if (viewAllCategoryContainer.classList.contains("view-all-enabled")) {
-      btn.textContent = "VIEW LESS";
+    if (categoryContainer.classList.contains("view-all-enabled")) {
+      viewAllBtn.textContent = "VIEW LESS";
       categoryWrapper.style.justifyContent = "flex-start";
       scroll2Arrows.forEach((button) => (button.style.display = "none"));
+      categoryContainer.style.overflowX = "auto";
     } else {
-      btn.textContent = "VIEW ALL";
+      viewAllBtn.textContent = "VIEW ALL";
       categoryWrapper.style.justifyContent = "center";
       scroll2Arrows.forEach((button) => (button.style.display = "flex"));
+      categoryContainer.scrollLeft = 0;
     }
   });
-});
-
-/* See More Functionality */
-const seeMoreBtn = document.getElementById("seeMoreBtn");
-const productGrid = document.getElementById("productGrid");
-
-seeMoreBtn.addEventListener("click", () => {
-  productGrid.classList.toggle("see-more-enabled");
-
-  if (productGrid.classList.contains("see-more-enabled")) {
-    seeMoreBtn.textContent = "SEE LESS";
-  } else {
-    seeMoreBtn.textContent = "SEE MORE";
-  }
-});
-
-/*
-const viewAllBtn = document.getElementById("view-all");
-// Data for the next set of cards to be loaded
-const newProductsData = [
-  {
-    name: "Avocado",
-    image: "images/avocado.png",
-    discount: "25%",
-    priceOld: "₦1500.00",
-    priceNew: "₦1125.00/kg",
-  },
-  {
-    name: "Broccoli",
-    image: "images/broccoli.png",
-    discount: "15%",
-    priceOld: "₦1000.00",
-    priceNew: "₦850.00/kg",
-  },
-  {
-    name: "Carrots",
-    image: "images/carrots.png",
-    discount: "40%",
-    priceOld: "₦1800.00",
-    priceNew: "₦1080.00/kg",
-  },
-  {
-    name: "Gala Apple",
-    image: "images/gala-apple.png",
-    discount: "30%",
-    priceOld: "₦900.00",
-    priceNew: "₦630.00/kg",
-  },
-];
-// Function to create and append new product cards
-// Function to generate the HTML string for a single item card
-const createItemCardHTML = (product) => {
-  return `
-        <div class="item-card">
-            <img
-                src="${product.image}"
-                alt="${product.name}"
-                class="item-image"
-            />
-            <div class="pricing">
-                <p class="discount">${product.discount}</p>
-                <h3 class="item-name">${product.name}</h3>
-                <p class="item-price-old">${product.priceOld}</p>
-                <div class="price-and-button">
-                    <p class="item-price">${product.priceNew}</p>
-                    <button class="add-to-cart-btn">+</button>
-                </div>
-            </div>
-        </div>
-    `;
-};
-
-const appendNewProductCards = (products) => {
-  products.forEach((product) => {
-    newCards += createItemCardHTML(product);
-  });
-
-  itemCardsContainer.innerHTML += newCards;
-
-  viewAllBtn.style.display = "none";
-
-  viewAllBtn.removeEventListener("click", appendNewProductCards);
-};
-
-viewAllBtn.addEventListener("click", () => {
-  appendNewProductCards(newProductsData);
-});
- */
-
-/* --- Quantity Controls --- */
-const productsGrid = document.querySelector(".products-grid");
-
-productsGrid.addEventListener("click", (e) => {
-  const qtyControls = e.target.parentElement;
-  const qtyDisplay = qtyControls.querySelector(".qty-display");
-  let currentQty = parseInt(qtyDisplay.value);
-
-  if (e.target.classList.contains("increment")) {
-    currentQty++;
-  } else if (e.target.classList.contains("decrement")) {
-    if (currentQty > 0) {
-      currentQty--;
-    }
-  }
-
-  qtyDisplay.value = currentQty;
-});
-
-/* --- Category Horizontal Scroll --- */
+}
 const categoryContainer = document.querySelector(".category-container");
-const scroll2LeftBtn = document.getElementById("scroll2-left");
-const scroll2RightBtn = document.getElementById("scroll2-right");
-
-const categoryScrollAmount = 605;
-
-const scrollCategoryLeft = () => {
-  categoryContainer.scrollBy({
-    left: -categoryScrollAmount,
-    behavior: "smooth",
-  });
-};
-
-const scrollCategoryRight = () => {
-  categoryContainer.scrollBy({
-    left: categoryScrollAmount,
-    behavior: "smooth",
-  });
-};
-
-if (scroll2LeftBtn && categoryContainer) {
-  scroll2LeftBtn.addEventListener("click", scrollCategoryLeft);
-}
-if (scroll2RightBtn && categoryContainer) {
-  scroll2RightBtn.addEventListener("click", scrollCategoryRight);
-}
