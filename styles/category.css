@@ -1,5 +1,6 @@
 .category-header {
   display: flex;
+  max-width: 65rem;
   text-align: center;
   justify-content: space-between;
   color: #000000;
@@ -14,7 +15,9 @@
 .plant {
   position: relative;
   top: 7rem;
+  left: 19.3rem;
   width: 30%;
+  height: 40%;
 }
 
 .category-section h2:not(.category-header h2) {
@@ -176,7 +179,6 @@
 @keyframes catPlantRight {
   from {
     opacity: 0;
-    transform: translateX(15rem);
   }
   to {
     opacity: 1;

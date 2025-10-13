@@ -278,12 +278,7 @@
   }
 }
 
-/* ========================================================================= */
-/* UPDATED MOBILE STYLES */
-/* ========================================================================= */
-
 @media (max-width: 768px) {
-  /* --- General Layout Adjustments --- */
   .content-section {
     flex-direction: column;
     margin-bottom: 0rem;
@@ -387,10 +382,9 @@
 
   .time-box .time,
   .time-box .label {
-    font-size: 1rem; /* Smaller, clearer font for small boxes */
+    font-size: 1rem;
   }
 
-  /* --- Animation Adjustments (Keep them simple for mobile) --- */
   .content-img.img1,
   .content-img.img2,
   .feature-item {

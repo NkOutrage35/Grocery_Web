@@ -15,8 +15,6 @@ function getFullProduct(cartItem) {
   return null;
 }
 
-// cart.js
-
 function initializeCart() {
   if (itemCardsData.length === 0) {
     setTimeout(initializeCart, 50);
@@ -27,7 +25,6 @@ function initializeCart() {
     let savedCart = localStorage.getItem("cartItems");
 
     if (savedCart) {
-
       cartItems = JSON.parse(savedCart);
 
       renderCartItems(cartItems);
