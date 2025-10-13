@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Pork",
+    "image": "images/unsplash_aeE-Y7SVVR4.png",
+    "discount": "35%",
+    "oldPrice": "₦2000.00",
+    "newPrice": "₦1000.00",
+    "unit": "kg"
+  },
+  {
+    "name": "Spinach",
+    "image": "images/unsplash_4jpNPu7IW8k.png",
+    "discount": "20%",
+    "oldPrice": "₦2000.00",
+    "newPrice": "₦1600.00",
+    "unit": "kg"
+  },
+  {
+    "name": "Beef Meat",
+    "image": "images/unsplash_lvmFFcLvHl8.png",
+    "discount": "50%",
+    "oldPrice": "₦2000.00",
+    "newPrice": "₦1000.00",
+    "unit": "kg"
+  },
+  {
+    "name": "Apple",
+    "image": "images/unsplash_wXuzS9xR49M.png",
+    "discount": "50%",
+    "oldPrice": "₦2000.00",
+    "newPrice": "₦1000.00",
+    "unit": "kg"
+  },
+  {
+    "name": "Coca Cola",
+    "image": "images/unsplash_wQFmDhrvVSs.png",
+    "discount": "5%",
+    "oldPrice": "₦500.00",
+    "newPrice": "₦475.00"
+  },
+  {
+    "name": "Bag of Rice",
+    "image": "images/unsplash_c9AuglIqhes.png",
+    "discount": "50%",
+    "oldPrice": "₦50000.00",
+    "newPrice": "₦25000.00",
+    "unit": "kg"
+  },
+  {
+    "name": "Broccoli",
+    "image": "https://placehold.co/230x200/50D150/ffffff?text=Broccoli",
+    "discount": "25%",
+    "oldPrice": "₦800.00",
+    "newPrice": "₦600.00"
+  },
+  {
+    "name": "Broccoli",
+    "image": "https://placehold.co/230x200/50D150/ffffff?text=Broccoli",
+    "discount": "25%",
+    "oldPrice": "₦800.00",
+    "newPrice": "₦600.00"
+  },
+  {
+    "name": "Broccoli",
+    "image": "https://placehold.co/230x200/50D150/ffffff?text=Broccoli",
+    "discount": "25%",
+    "oldPrice": "₦800.00",
+    "newPrice": "₦600.00"
+  },
+  {
+    "name": "Broccoli",
+    "image": "https://placehold.co/230x200/50D150/ffffff?text=Broccoli",
+    "discount": "25%",
+    "oldPrice": "₦800.00",
+    "newPrice": "₦600.00"
+  }
+]

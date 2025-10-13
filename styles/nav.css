@@ -6,7 +6,7 @@
   padding: 3rem 5rem 0rem 5rem;
 }
 
-.nav-container{
+.nav-container {
   margin: 0;
   padding-bottom: 0%;
 }
@@ -44,7 +44,7 @@
   position: absolute;
   width: 1rem;
   right: 1rem;
-  pointer-events: none; /* Prevents the icon from interfering with input clicks */
+  pointer-events: none;
 }
 
 /* Navigation Links Styling */
@@ -75,9 +75,9 @@
 }
 
 .login-btn {
-  background-color: #4B773B;
+  background-color: #4b773b;
   color: var(--color-text-light);
-  border: 2px solid var(--color-text-light); /* Correct border color */
+  border: 2px solid var(--color-text-light);
   border-radius: 1rem;
   padding: 0.5rem 1.5rem;
 }
@@ -87,4 +87,15 @@
   color: var(--color-list-marker);
   border-radius: 1rem;
   padding: 0.6rem 1rem;
+}
+
+.cart-count {
+  background-color: #ff4d4f;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 3.5rem;
+  right: 26.2%;
 }

@@ -1,0 +1,161 @@
+[
+  {
+    "id": 1,
+    "name": "Pork",
+    "image": "images/unsplash_aeE-Y7SVVR4.png",
+    "discount": "35%",
+    "oldPrice": 2000,
+    "price": 1000,
+    "unit": "kg",
+    "quantity": 0
+  },
+  {
+    "id": 2,
+    "name": "Spinach",
+    "image": "images/unsplash_4jpNPu7IW8k.png",
+    "discount": "20%",
+    "oldPrice": 2000,
+    "price": 1600,
+    "unit": "kg",
+    "quantity": 0
+  },
+  {
+    "id": 3,
+    "name": "Beef Meat",
+    "image": "images/unsplash_lvmFFcLvHl8.png",
+    "discount": "50%",
+    "oldPrice": 2000,
+    "price": 1000,
+    "unit": "kg",
+    "quantity": 0
+  },
+  {
+    "id": 4,
+    "name": "Apple",
+    "image": "images/unsplash_wXuzS9xR49M.png",
+    "discount": "50%",
+    "oldPrice": 2000,
+    "price": 1000,
+    "unit": "kg",
+    "quantity": 0
+  },
+  {
+    "id": 5,
+    "name": "Coca Cola",
+    "image": "images/unsplash_wQFmDhrvVSs.png",
+    "discount": "5%",
+    "oldPrice": 500,
+    "price": 475,
+    "quantity": 0
+  },
+  {
+    "id": 6,
+    "name": "Bag of Rice",
+    "image": "images/unsplash_c9AuglIqhes.png",
+    "discount": "50%",
+    "oldPrice": 50000,
+    "price": 25000,
+    "unit": "kg",
+    "quantity": 0
+  },
+  {
+    "id": 7,
+    "name": "Broccoli",
+    "image": "https://placehold.co/230x200/50D150/ffffff?text=Broccoli",
+    "discount": "25%",
+    "oldPrice": 800,
+    "price": 600,
+    "quantity": 0
+  },
+  {
+    "id": 8,
+    "name": "Milo",
+    "image": "images/chocolate-malt-energy-drink-milo-C269H4-removebg-preview 1.png",
+    "price": 1000,
+    "quantity": 0
+  },
+  {
+    "id": 9,
+    "name": "Tomatoes",
+    "image": "images/vince-lee-p6KMIFzWwy8-unsplash-removebg-preview 1.png",
+    "price": 500,
+    "quantity": 0
+  },
+  {
+    "id": 10,
+    "name": "Chicken",
+    "image": "images/photo-1587593810167-a84920ea0781-removebg-preview 1.png",
+    "price": 1500,
+    "quantity": 0
+  },
+  {
+    "id": 11,
+    "name": "Cornflakes",
+    "image": "images/Rectangle 236.png",
+    "price": 1700,
+    "quantity": 0
+  },
+  {
+    "id": 12,
+    "name": "Watermelon",
+    "image": "images/Rectangle 247.png",
+    "price": 1300,
+    "quantity": 0
+  },
+  {
+    "id": 13,
+    "name": "Banana (Bunch)",
+    "image": "images/Rectangle 233.png",
+    "price": 2500,
+    "quantity": 0
+  },
+  {
+    "id": 14,
+    "name": "Yam Flour",
+    "image": "images/Rectangle 237.png",
+    "price": 5500,
+    "quantity": 0
+  },
+  {
+    "id": 15,
+    "name": "Fish",
+    "image": "images/Group 130.png",
+    "price": 4500,
+    "quantity": 0
+  },
+  {
+    "id": 16,
+    "name": "Grapes",
+    "image": "images/Rectangle 248.png",
+    "price": 800,
+    "quantity": 0
+  },
+  {
+    "id": 17,
+    "name": "Fish fillets",
+    "image": "images/Rectangle 256.png",
+    "price": 4500,
+    "quantity": 0
+  },
+  {
+    "id": 18,
+    "name": "Apples",
+    "image": "images/unsplash_wXuzS9xR49M.png",
+    "price": 1200,
+    "quantity": 0
+  },
+  {
+    "id": 19,
+    "name": "Banana (Single)",
+    "image": "images/banana.jpg",
+    "price": 500,
+    "quantity": 0
+  },
+  {
+    "id": 20,
+    "name": "Orange",
+    "image": "images/orange.jpg",
+    "price": 800,
+    "quantity": 0
+  }
+]

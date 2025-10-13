@@ -23,27 +23,3 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
-/* --- End of Flash-Sale CountDown */
-
-const categoryWrapper = document.querySelector(".category-wrap");
-const viewAllBtn = document.getElementById("view-all2");
-const scroll2Arrows = document.querySelector(".scroll2");
-
-if (viewAllBtn) {
-  viewAllBtn.addEventListener("click", () => {
-    categoryContainer.classList.toggle("view-all-enabled");
-
-    if (categoryContainer.classList.contains("view-all-enabled")) {
-      viewAllBtn.textContent = "VIEW LESS";
-      categoryWrapper.style.justifyContent = "flex-start";
-      scroll2Arrows.forEach((button) => (button.style.display = "none"));
-      categoryContainer.style.overflowX = "auto";
-    } else {
-      viewAllBtn.textContent = "VIEW ALL";
-      categoryWrapper.style.justifyContent = "center";
-      scroll2Arrows.forEach((button) => (button.style.display = "flex"));
-      categoryContainer.scrollLeft = 0;
-    }
-  });
-}
-const categoryContainer = document.querySelector(".category-container");

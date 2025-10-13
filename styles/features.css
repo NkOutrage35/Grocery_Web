@@ -132,11 +132,11 @@
 .time-box {
   background: #1e1a1a;
   color: #fff;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 17rem;
+  width: 15rem;
 }
 
 /* Number styling */

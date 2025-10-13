@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-    <script src="groceryDisplay.js"></script>
-</body>
+    <link rel="stylesheet" href="styles/cart.css" />
+  </head>
+  <body>
+    <div class="cart-container">
+      <h1>Your Shopping Cart</h1>
+
+      <div class="cart-items" id="cart-items"></div>
+
+      <div class="cart-summary">
+        <h2>Total:</h2>
+        <p><span id="cart-total">0.00</span></p>
+      </div>
+      <button id="checkout-button">Proceed to Checkout</button>
+    </div>
+
+    <script src="https://kit.fontawesome.com/2ce14ed893.js" crossorigin="anonymous"></script>
+    <script src="cart.js"></script>
+  </body>
 </html>
