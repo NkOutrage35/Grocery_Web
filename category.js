@@ -1,10 +1,8 @@
-/* Category Section */
 const categoryContainer = document.querySelector(".category-container");
 const scroll2LeftBtn = document.getElementById("scroll2-left");
 const scroll2RightBtn = document.getElementById("scroll2-right");
 const viewAll2Btn = document.getElementById("view-all2");
 
-// Category data array
 const categoryData = [
   {
     name: "Vegetables",

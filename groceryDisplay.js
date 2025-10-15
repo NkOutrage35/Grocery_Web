@@ -61,18 +61,8 @@ const productData = [
     price: 1200,
     image: "images/unsplash_wXuzS9xR49M.png",
   },
-  {
-    id: "12",
-    name: "Cheese",
-    price: 500,
-    image: "images/pngwing.com (2).png",
-  },
-  {
-    id: "13",
-    name: "Potato",
-    price: 800,
-    image: "images/pngwing.com (1).png",
-  },
+  { id: "12", name: "Cheese", price: 500, image: "images/pngwing.com (2).png" },
+  { id: "13", name: "Potato", price: 800, image: "images/pngwing.com (1).png" },
 ];
 
 function displayProducts(products) {
@@ -82,23 +72,22 @@ function displayProducts(products) {
     card.classList.add("product-card");
 
     card.innerHTML = `
-            <img src="${product.image}" alt="${
-      product.name
-    }" class="product-image" />
-            <h3 class="product-name">${product.name}</h3>
-            <p class="product-price">₦${product.price.toFixed(2)}</p>
-            <div class="product-actions">
-                <div class="qty-controls">
-                    <button class="qty-btn decrement">-</button>
-                    <input type="number" min="0" value="0" class="qty-display" />
-                    <button class="qty-btn increment">+</button>
-                </div>
-                <button class="add-btn" data-product-id="${product.id}">
-                    <img src="images/add_shopping_cart.svg" alt="Shopping Cart Icon" />
-                    Add to cart
-                </button>
-            </div>
-        `;
+      <img src="${product.image}" alt="${product.name}" class="product-image" />
+      <h3 class="product-name">${product.name}</h3>
+      <p class="product-price">₦${product.price.toFixed(2)}</p>
+      <div class="product-actions">
+        <div class="qty-controls">
+          <button class="qty-btn decrement">-</button>
+          <input type="number" min="0" value="0" class="qty-display" />
+          <button class="qty-btn increment">+</button>
+        </div>
+        <button class="add-btn" data-product-id="${product.id}">
+          <img src="images/add_shopping_cart.svg" alt="Shopping Cart Icon" />
+          Add to cart
+        </button>
+      </div>
+    `;
+
     productGrid.appendChild(card);
   });
 }
@@ -122,6 +111,7 @@ function QuantityControls() {
       qtyDisplay.value = currentQty;
     }
 
+    // Add to Cart
     const addBtn = e.target.closest(".add-btn");
     if (addBtn) {
       const productId = addBtn.dataset.productId;
@@ -129,7 +119,7 @@ function QuantityControls() {
       const qtyDisplay = productCard.querySelector(".qty-display");
       const quantityToAdd = parseInt(qtyDisplay.value);
 
-      if (window.itemCardsData.length === 0) {
+      if (!window.itemCardsData || window.itemCardsData.length === 0) {
         console.error("Product data not loaded yet. Cannot add to cart.");
         return;
       }

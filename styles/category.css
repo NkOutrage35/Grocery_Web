@@ -101,7 +101,7 @@
   border-radius: 50%;
   background-color: #000000;
   color: white;
-  font-size: 2rem;
+  font-size: 1rem;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -116,7 +116,7 @@
   border-radius: 50%;
   background-color: #000000;
   color: white;
-  font-size: 2rem;
+  font-size: 1rem;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -145,8 +145,6 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-/* === Scroll-driven animations for categories === */
 
 /* fade in from left for the heading */
 .category-header h2 {
