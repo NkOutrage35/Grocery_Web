@@ -6,49 +6,114 @@
     <title>Registration</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/register.css" />
+    <script
+      src="https://kit.fontawesome.com/2ce14ed893.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="registration-container">
-      <h2>Register</h2>
-      <form id="registrationForm">
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" placeholder="Enter your username" />
-          <div class="error-message"></div>
+    <div class="registration-wrapper">
+      <div class="registration-illustration fade-in">
+        <img src="images/Grocify.svg" alt="GrociFy Logo" id="logo2" />
+        <img
+          src="images/WhatsApp_Image_2025-09-29_at_23.27.36_bf5855f5-removebg-preview.png"
+          alt="Grocify Hero Illustration"
+        />
+        <div class="illustration-text">
+          <h1>Hello, Welcome!</h1>
+          <p>Already have an account?</p>
+          <a href="login.html" class="illustration-link-btn">Login</a>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="text" id="email" name="email" placeholder="grocify@example.com" />
-          <div class="error-message"></div>
+      <div class="registration-container">
+        <div class="registration-form-content">
+          <h2>Create Your Grocify Account</h2>
+          <p class="form-subtitle">
+            Join us and start shopping in just a few quick steps!
+          </p>
+
+          <form id="registrationForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Enter your username"
+                />
+                <div class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="1234567890"
+                />
+                <div class="error-message"></div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="grocify@example.com"
+                />
+                <div class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Address:</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="Enter your address"
+                />
+                <div class="error-message"></div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Min. 6 characters"
+                />
+                <div class="error-message"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Repeat your password"
+                />
+                <div class="error-message"></div>
+              </div>
+            </div>
+
+            <button type="submit" formaction="registered.html">Register</button>
+          </form>
+
+          <p class="form-note">
+            By registering, you agree to our Terms of Service and Privacy
+            Policy.
+          </p>
         </div>
-
-        <div class="form-group">
-          <label for="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone" placeholder="1234567890" />
-          <div class="error-message"></div>
-        </div>
-
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" placeholder="xxxxx" />
-          <div class="error-message"></div>
-        </div>
-
-        <div class="form-group">
-          <label for="confirmPassword">Confirm Password:</label>
-          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="xxxxx" />
-          <div class="error-message"></div>
-        </div>
-
-        <div class="form-group">
-          <label for="address">Address:</label>
-          <input type="text" id="address" name="address" placeholder="Enter your address" />
-          <div class="error-message"></div>
-        </div>
-
-        <button type="submit" formaction="registered.html">Register</button>
-      </form>
+      </div>
     </div>
 
     <script>
@@ -85,11 +150,11 @@
       };
 
       phone.addEventListener("input", (e) => {
-        e.target.value = e.target.value.replace(/\D/g, ""); 
+        e.target.value = e.target.value.replace(/\D/g, "");
       });
 
       const validateInput = () => {
-        let isValid = true; 
+        let isValid = true;
 
         const usernameValue = username.value.trim();
         const emailValue = email.value.trim();
@@ -100,27 +165,27 @@
 
         if (usernameValue === "") {
           setError(username, "Username is required");
-          isValid = false; 
+          isValid = false;
         } else {
           setSuccess(username);
         }
 
         if (emailValue === "") {
           setError(email, "Email is required");
-          isValid = false; 
+          isValid = false;
         } else if (!isValidEmail(emailValue)) {
           setError(email, "Email is not valid");
-          isValid = false; 
+          isValid = false;
         } else {
           setSuccess(email);
         }
 
         if (phoneValue === "") {
           setError(phone, "Phone number is required use 10 digits");
-          isValid = false; 
+          isValid = false;
         } else if (!/^\d{10}$/.test(phoneValue)) {
           setError(phone, "Phone number must be 10 digits");
-          isValid = false; 
+          isValid = false;
         } else {
           setSuccess(phone);
         }
@@ -128,11 +193,11 @@
         let isPasswordValid = true;
         if (passwordValue === "") {
           setError(password, "Password is required");
-          isValid = false; 
+          isValid = false;
           isPasswordValid = false;
         } else if (passwordValue.length < 6) {
           setError(password, "Password must be at least 6 characters");
-          isValid = false; 
+          isValid = false;
           isPasswordValid = false;
         } else {
           setSuccess(password);
@@ -140,19 +205,19 @@
 
         if (confirmPasswordValue === "") {
           setError(confirmPassword, "Confirm Password");
-          isValid = false; 
+          isValid = false;
         } else if (!isPasswordValid) {
           setError(confirmPassword, "Fix the Password field first.");
         } else if (confirmPasswordValue !== passwordValue) {
           setError(confirmPassword, "Passwords do not match");
-          isValid = false; 
+          isValid = false;
         } else {
           setSuccess(confirmPassword);
         }
 
         if (addressValue === "") {
           setError(address, "Address is required");
-          isValid = false; 
+          isValid = false;
         } else {
           setSuccess(address);
         }
