@@ -103,11 +103,11 @@ function renderCartItems(cartItems) {
           <div class="item-controls">
             <button class="qty-btn" onclick="changeQuantity('${
               item.id
-            }', -1)">-</button>
+            }', -1)"><i class="fa-solid fa-minus"></i></button>
             <span>${item.quantity}</span>
             <button class="qty-btn" onclick="changeQuantity('${
               item.id
-            }', 1)">+</button>
+            }', 1)"><i class="fa-solid fa-plus"></i></button>
           </div>
         </div>
         <i class="fa-solid fa-trash" onclick="removeItem('${item.id}')"></i>

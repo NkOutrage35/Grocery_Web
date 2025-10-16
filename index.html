@@ -14,13 +14,17 @@
     <link rel="stylesheet" href="styles/review.css" />
     <link rel="stylesheet" href="styles/download.css" />
     <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/sign-In.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/2ce14ed893.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/2ce14ed893.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -53,7 +57,9 @@
                 <span class="cart-count" id="cart-count">0</span>
               </a>
             </li>
-            <li><a href="sign-In.html" class="login-btn">Login</a></li>
+            <li>
+              <a href="#" class="login-btn" id="open-login-modal">Login</a>
+            </li>
             <li><a href="register.html" class="register-btn">Register</a></li>
           </ul>
         </nav>
@@ -149,9 +155,13 @@
 
     <section class="item-cards-section">
       <div class="card-and-scroll-wrapper">
-        <button class="scroll" id="scroll-left"><i class="fa-solid fa-less-than"></i></button>
+        <button class="scroll" id="scroll-left">
+          <i class="fa-solid fa-less-than"></i>
+        </button>
         <div class="item-cards-container"></div>
-        <button class="scroll" id="scroll-right"><i class="fa-solid fa-greater-than"></i></button>
+        <button class="scroll" id="scroll-right">
+          <i class="fa-solid fa-greater-than"></i>
+        </button>
       </div>
 
       <p class="view-all" id="view-all1">VIEW ALL</p>
@@ -174,11 +184,15 @@
       <h2>Shop by Category</h2>
 
       <div class="category-wrap">
-        <button class="scroll2" id="scroll2-left"><i class="fa-solid fa-less-than"></i></button>
+        <button class="scroll2" id="scroll2-left">
+          <i class="fa-solid fa-less-than"></i>
+        </button>
 
         <div class="category-container"></div>
 
-        <button class="scroll2" id="scroll2-right"><i class="fa-solid fa-greater-than"></i></button>
+        <button class="scroll2" id="scroll2-right">
+          <i class="fa-solid fa-greater-than"></i>
+        </button>
       </div>
 
       <p class="view-all" id="view-all2">VIEW ALL</p>
@@ -349,6 +363,52 @@
         <a href="#">Refund Policy</a>
       </div>
     </footer>
+
+    <div class="modal-overlay" id="login-modal">
+      <div class="form-container">
+        <button class="close-btn" id="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+
+        <h1 id="sign-in-title">Sign In</h1>
+
+        <form action="/login" method="POST">
+          <div class="input_field">
+            <i class="fa-solid fa-envelope"></i>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <div class="error-message"></div>
+          </div>
+          <div class="input_field password_field">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <i
+              class="fa-regular fa-eye"
+              id="togglePassword"
+              style="cursor: pointer"
+            ></i>
+            <div class="error-message"></div>
+          </div>
+
+          <p id="forgot-password">
+            Lost your password? <a href="#">Click here</a>
+          </p>
+          <br />
+
+          <div class="btn-container">
+            <button class="submit-btn" type="submit" id="sign-in-btn">Sign In</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <script src="script.js"></script>
     <script src="itemCards.js"></script>
