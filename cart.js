@@ -188,3 +188,37 @@ function saveCart() {
 document.addEventListener("DOMContentLoaded", () => {
   initializeCart();
 });
+
+// Checkout Alert
+const checkoutBtn = document.getElementById("checkout-button");
+
+checkoutBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  Swal.fire({
+    title: "Confirm Checkout?",
+    text: "Are you sure you want to finalize your purchase and empty the cart?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#4b773b",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, Checkout!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      cartItems = [];
+
+      renderCartItems(cartItems);
+      calculateCartTotal(cartItems);
+      updateCartCount();
+      saveCart();
+
+      Swal.fire({
+        title: "Checked Out!",
+        text: "Your order has been placed. Thank you for shopping with us!",
+        icon: "success",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    }
+  });
+});
