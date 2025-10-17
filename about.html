@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/about.css" />
+    <link rel="stylesheet" href="styles/sign-In.css" />
+    <script src="cart.js" defer></script>
   </head>
   <body>
     <div class="nav-hero-wrapper">
@@ -29,14 +31,23 @@
             <ul class="nav-links">
               <li><a href="index.html" class="nav-link nav-link1">Home</a></li>
               <li><a href="about.html" class="nav-link nav-link1">About</a></li>
-              <li><a href="contact.html" class="nav-link nav-link1">Contact</a></li>
               <li>
-                <a href="#cart" class="nav-link">
+                <a href="contact.html" class="nav-link nav-link1">Contact</a>
+              </li>
+              <li>
+                <a href="cart.html" class="nav-link">
                   <img src="images/Vector (1).svg" alt="Cart" id="cart-icon" />
+                  <span class="cart-count" id="cart-count">0</span>
                 </a>
               </li>
-              <li><a href="sign-In.html" class="login-btn" id="log-btn">Login</a></li>
-              <li><a href="#register" class="register-btn" id="reg-btn">Register</a></li>
+              <li>
+                <a href="#" class="login-btn" id="loginbtn">Login</a>
+              </li>
+              <li>
+                <a href="register.html" class="register-btn" id="reg-btn"
+                  >Register</a
+                >
+              </li>
             </ul>
           </nav>
         </div>
@@ -66,7 +77,10 @@
           </p>
         </div>
         <div class="about-image">
-          <img src="images/about-story.jpg" alt="Our Story" />
+          <img
+            src="images\Gemini_Generated_Image_hqcd2mhqcd2mhqcd.png"
+            alt="Our Story"
+          />
         </div>
       </div>
     </section>
@@ -75,7 +89,10 @@
     <section class="about-section light-bg">
       <div class="about-container reverse">
         <div class="about-image">
-          <img src="images/about-mission.jpg" alt="Our Mission" />
+          <img
+            src="images\Gemini_Generated_Image_h7ezskh7ezskh7ez.png"
+            alt="Our Mission"
+          />
         </div>
         <div class="about-text">
           <h2>Our Mission</h2>
@@ -96,17 +113,17 @@
       </div>
       <div class="team-grid">
         <div class="team-member">
-          <img src="images/team1.jpg" alt="Team Member" />
+          <img src="images\Download free png of PNG Man using holding laptop computer portrait adult about man laptop, african american laptop, happy man png, african, and young 13164030.jpg" alt="Team Member" />
           <h3>Kwame A.</h3>
           <p>Founder & CEO</p>
         </div>
         <div class="team-member">
-          <img src="images/team2.jpg" alt="Team Member" />
+          <img src="images\A woman wearing glasses and a gray suit stands in front of a crossword puzzle _ Premium AI-generated PSD.jpg" alt="Team Member" />
           <h3>Ama N.</h3>
           <p>Head of Operations</p>
         </div>
         <div class="team-member">
-          <img src="images/team3.jpg" alt="Team Member" />
+          <img src="images\Download premium png of PNG Business man portrait suit businessman background_ by Tung about business man png, executive man png, portrait professional, blazer, and man standing cross armed png 15558506.jpg" alt="Team Member" />
           <h3>Kofi B.</h3>
           <p>Customer Success</p>
         </div>
@@ -126,5 +143,55 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal-overlay" id="login-modal">
+      <div class="form-container">
+        <button class="close-btn" id="close-modal-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h1 id="sign-in-title">Sign In</h1>
+
+        <form action="/login" method="POST">
+          <div class="input_field">
+            <i class="fa-solid fa-envelope"></i>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <div class="error-message"></div>
+          </div>
+          <div class="input_field password_field">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <i
+              class="fa-regular fa-eye"
+              id="togglePassword"
+              style="cursor: pointer"
+            ></i>
+            <div class="error-message"></div>
+          </div>
+
+          <p id="forgot-password">
+            Lost your password? <a href="#">Click here</a>
+          </p>
+          <br />
+
+          <div class="btn-container">
+            <button class="submit-btn" type="submit" id="sign-in-btn">
+              Sign In
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

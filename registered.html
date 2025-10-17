@@ -14,12 +14,17 @@
     <link rel="stylesheet" href="styles/review.css" />
     <link rel="stylesheet" href="styles/download.css" />
     <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/sign-In.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/2ce14ed893.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -47,10 +52,15 @@
               <a href="contact.html" class="nav-link nav-link1">Contact</a>
             </li>
             <li>
-              <a href="#cart" class="nav-link">
+              <a href="cart.html" class="nav-link">
                 <img src="images/Vector (1).svg" alt="Cart" id="cart-icon" />
+                <span class="cart-count" id="cart-count">0</span>
               </a>
             </li>
+            <li style="display: none;">
+              <a href="#" class="login-btn" id="open-login-modal">Login</a>
+            </li>
+            <li style="display: none;"><a href="register.html" class="register-btn">Register</a></li>
           </ul>
         </nav>
       </div>
@@ -145,173 +155,15 @@
 
     <section class="item-cards-section">
       <div class="card-and-scroll-wrapper">
-        <div><button class="scroll" id="scroll-left"><</button></div>
-
-        <div class="item-cards-container">
-          <div class="item-card">
-            <img
-              src="images\unsplash_aeE-Y7SVVR4.png"
-              alt="Pork"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">35%</p>
-              <h3 class="item-name">Pork</h3>
-              <p class="item-price-old">₦2000.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦1000.00/kg</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-          <div class="item-card">
-            <img
-              src="images\unsplash_4jpNPu7IW8k.png"
-              alt="Spinach"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">20%</p>
-              <h3 class="item-name">Spinach</h3>
-              <p class="item-price-old">₦2000.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦1600.00/kg</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-          <div class="item-card">
-            <img
-              src="images\unsplash_lvmFFcLvHl8.png"
-              alt="Beef Meat"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">50%</p>
-              <h3 class="item-name">Beef Meat</h3>
-              <p class="item-price-old">₦2000.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦1000.00/kg</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-          <div class="item-card">
-            <img
-              src="images\unsplash_wXuzS9xR49M.png"
-              alt="Apple"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">50%</p>
-              <h3 class="item-name">Apple</h3>
-              <p class="item-price-old">₦2000.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦1000.00/kg</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-          <div class="item-card">
-            <img
-              src="images\unsplash_wQFmDhrvVSs.png"
-              alt="Coca Cola"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">5%</p>
-              <h3 class="item-name">Coca Cola</h3>
-              <p class="item-price-old">₦500.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦475.00</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-          <div class="item-card">
-            <img
-              src="images\unsplash_c9AuglIqhes.png"
-              alt="Bag of Rice"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">50%</p>
-              <h3 class="item-name">Bag of Rice</h3>
-              <p class="item-price-old">₦50000.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦25000.00/kg</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-          <div class="item-card">
-            <img
-              src="https://placehold.co/230x200/50D150/ffffff?text=Broccoli"
-              alt="Broccoli"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">25%</p>
-              <h3 class="item-name">Broccoli</h3>
-              <p class="item-price-old">₦800.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦600.00</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-          <div class="item-card">
-            <img
-              src="https://placehold.co/230x200/50D150/ffffff?text=Broccoli"
-              alt="Broccoli"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">25%</p>
-              <h3 class="item-name">Broccoli</h3>
-              <p class="item-price-old">₦800.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦600.00</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-          <div class="item-card">
-            <img
-              src="https://placehold.co/230x200/50D150/ffffff?text=Broccoli"
-              alt="Broccoli"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">25%</p>
-              <h3 class="item-name">Broccoli</h3>
-              <p class="item-price-old">₦800.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦600.00</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-          <div class="item-card">
-            <img
-              src="https://placehold.co/230x200/50D150/ffffff?text=Broccoli"
-              alt="Broccoli"
-              class="item-image"
-            />
-            <div class="pricing">
-              <p class="discount">25%</p>
-              <h3 class="item-name">Broccoli</h3>
-              <p class="item-price-old">₦800.00</p>
-              <div class="price-and-button">
-                <p class="item-price">₦600.00</p>
-                <button class="add-to-cart-btn">+</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div><button class="scroll" id="scroll-right">></button></div>
+        <button class="scroll" id="scroll-left">
+          <i class="fa-solid fa-less-than"></i>
+        </button>
+        <div class="item-cards-container"></div>
+        <button class="scroll" id="scroll-right">
+          <i class="fa-solid fa-greater-than"></i>
+        </button>
       </div>
+
       <p class="view-all" id="view-all1">VIEW ALL</p>
     </section>
 
@@ -328,306 +180,30 @@
           class="plant"
         />
       </div>
+
       <h2>Shop by Category</h2>
+
       <div class="category-wrap">
-        <div><button class="scroll2" id="scroll2-left"><</button></div>
+        <button class="scroll2" id="scroll2-left">
+          <i class="fa-solid fa-less-than"></i>
+        </button>
 
-        <div class="category-container">
-          <div class="category-card">
-            <img src="images\unsplash_-ftWfohtjNw.png" alt="Vegetables" />
-            <h3>Vegetables</h3>
-          </div>
-          <div class="category-card">
-            <img src="images\unsplash_tk2ifGN60xo.png" alt="Beverage" />
-            <h3>Beverage</h3>
-          </div>
-          <div class="category-card">
-            <img src="images\unsplash_SJ7uORconic.png" alt="Noodles/Pasta" />
-            <h3>Noodles/Pasta</h3>
-          </div>
-          <div class="category-card">
-            <img src="images\unsplash_JI5VdAD2mAo.png" alt="Fruits" />
-            <h3>Fruits</h3>
-          </div>
-          <div class="category-card">
-            <img src="images\unsplash_DNQLBdGdld0.png" alt="Frozen Food" />
-            <h3>Frozen Food</h3>
-          </div>
-          <div class="category-card">
-            <img src="images\pngegg (2).png" alt="Dairy & Eggs" />
-            <h3>Dairy & Eggs</h3>
-          </div>
-          <div class="category-card">
-            <img src="images\pngegg (1).png" alt="Canned Goods" />
-            <h3>Canned Goods</h3>
-          </div>
-          <div class="category-card">
-            <img src="images\pngegg.png" alt="Seafood" />
-            <h3>Seafood</h3>
-          </div>
-          <div class="category-card">
-            <img src="images\pngwing.com.png" alt="Baked" />
-            <h3>Baked</h3>
-          </div>
-        </div>
+        <div class="category-container"></div>
 
-        <div><button class="scroll2" id="scroll2-right">></button></div>
+        <button class="scroll2" id="scroll2-right">
+          <i class="fa-solid fa-greater-than"></i>
+        </button>
       </div>
 
-      <p class="view-all">VIEW ALL</p>
+      <p class="view-all" id="view-all2">VIEW ALL</p>
     </section>
 
     <!-- Grocery-Display Section -->
     <section class="grocery-section">
       <h2 id="grocery-section-header">GROCERY DISPLAY</h2>
 
-      <div class="products-grid" id="productGrid">
-        <div class="product-card">
-          <img
-            src="images/chocolate-malt-energy-drink-milo-C269H4-removebg-preview 1.png"
-            alt="Milo"
-            class="product-image"
-          />
-          <h3 class="product-name">Milo</h3>
-          <p class="product-price">₦1000.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
+      <div class="products-grid" id="productGrid"></div>
 
-        <div class="product-card">
-          <img
-            src="images/vince-lee-p6KMIFzWwy8-unsplash-removebg-preview 1.png"
-            alt="Tomatoes"
-            class="product-image"
-          />
-          <h3 class="product-name">Tomatoes</h3>
-          <p class="product-price">₦500.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            src="images/photo-1587593810167-a84920ea0781-removebg-preview 1.png"
-            alt="Chicken"
-            class="product-image"
-          />
-          <h3 class="product-name">Chicken</h3>
-          <p class="product-price">₦1500.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            src="images/Rectangle 236.png"
-            alt="Cornflakes"
-            class="product-image"
-          />
-          <h3 class="product-name">Cornflakes</h3>
-          <p class="product-price">₦1700.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            src="images/Rectangle 247.png"
-            alt="Watermelon"
-            class="product-image"
-          />
-          <h3 class="product-name">Watermelon</h3>
-          <p class="product-price">₦1300.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            src="images/Rectangle 233.png"
-            alt="Banana"
-            class="product-image"
-          />
-          <h3 class="product-name">Banana</h3>
-          <p class="product-price">₦2500.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            src="images/Rectangle 237.png"
-            alt="Yam Flour"
-            class="product-image"
-          />
-          <h3 class="product-name">Yam Flour</h3>
-          <p class="product-price">₦5500.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="images/Group 130.png" alt="Fish" class="product-image" />
-          <h3 class="product-name">Fish</h3>
-          <p class="product-price">₦4500.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            src="images/Rectangle 248.png"
-            alt="Grapes"
-            class="product-image"
-          />
-          <h3 class="product-name">Grapes</h3>
-          <p class="product-price">₦800.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img
-            src="images/Rectangle 256.png"
-            alt="Fish fillets"
-            class="product-image"
-          />
-          <h3 class="product-name">Fish fillets</h3>
-          <p class="product-price">₦4500.00</p>
-          <div class="product-actions">
-            <div class="qty-controls">
-              <button class="qty-btn decrement">-</button>
-              <input type="number" min="0" value="0" class="qty-display" />
-              <button class="qty-btn increment">+</button>
-            </div>
-            <button class="add-btn">
-              <img
-                src="images/add_shopping_cart.svg"
-                alt="Shopping Cart Icon"
-                id="add-to-cart-icon"
-              />
-              Add to cart
-            </button>
-          </div>
-        </div>
-      </div>
       <div class="see-more-container">
         <p class="see-more" id="seeMoreBtn">SEE MORE</p>
       </div>
@@ -739,7 +315,7 @@
           <h3 class="footer-text-heading">About</h3>
           <ul class="footer-text">
             <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
@@ -788,6 +364,56 @@
       </div>
     </footer>
 
+    <div class="modal-overlay" id="login-modal">
+      <div class="form-container">
+        <button class="close-btn" id="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+
+        <h1 id="sign-in-title">Sign In</h1>
+
+        <form action="/login" method="POST">
+          <div class="input_field">
+            <i class="fa-solid fa-envelope"></i>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <div class="error-message"></div>
+          </div>
+          <div class="input_field password_field">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <i
+              class="fa-regular fa-eye"
+              id="togglePassword"
+              style="cursor: pointer"
+            ></i>
+            <div class="error-message"></div>
+          </div>
+
+          <p id="forgot-password">
+            Lost your password? <a href="#">Click here</a>
+          </p>
+          <br />
+
+          <div class="btn-container">
+            <button class="submit-btn" type="submit" id="sign-in-btn">Sign In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="itemCards.js"></script>
+    <script src="groceryDisplay.js"></script>
+    <script src="cart.js"></script>
+    <script src="category.js"></script>
   </body>
 </html>

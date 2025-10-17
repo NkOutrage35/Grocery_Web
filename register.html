@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/2ce14ed893.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <div class="registration-wrapper">
@@ -105,12 +106,11 @@
               </div>
             </div>
 
-            <button type="submit" formaction="registered.html">Register</button>
+            <button type="submit">Register</button>
           </form>
 
           <p class="form-note">
-            By registering, you agree to our Terms of Service and Privacy
-            Policy.
+            By registering, you agree to our Terms of Service and Privacy Policy.
           </p>
         </div>
       </div>
@@ -163,6 +163,7 @@
         const confirmPasswordValue = confirmPassword.value.trim();
         const addressValue = address.value.trim();
 
+        // Username
         if (usernameValue === "") {
           setError(username, "Username is required");
           isValid = false;
@@ -170,6 +171,7 @@
           setSuccess(username);
         }
 
+        // Email
         if (emailValue === "") {
           setError(email, "Email is required");
           isValid = false;
@@ -180,6 +182,7 @@
           setSuccess(email);
         }
 
+        // Phone
         if (phoneValue === "") {
           setError(phone, "Phone number is required use 10 digits");
           isValid = false;
@@ -190,6 +193,7 @@
           setSuccess(phone);
         }
 
+        // Password
         let isPasswordValid = true;
         if (passwordValue === "") {
           setError(password, "Password is required");
@@ -203,8 +207,9 @@
           setSuccess(password);
         }
 
+        // Confirm Password
         if (confirmPasswordValue === "") {
-          setError(confirmPassword, "Confirm Password");
+          setError(confirmPassword, "Confirm Password is required");
           isValid = false;
         } else if (!isPasswordValid) {
           setError(confirmPassword, "Fix the Password field first.");
@@ -215,6 +220,7 @@
           setSuccess(confirmPassword);
         }
 
+        // Address
         if (addressValue === "") {
           setError(address, "Address is required");
           isValid = false;
@@ -228,10 +234,26 @@
       form.addEventListener("submit", (e) => {
         const isFormValid = validateInput();
 
-        if (!isFormValid) {
+        if (isFormValid) {
           e.preventDefault();
+
+          Swal.fire({
+            title: "Registration Complete!",
+            text: "Welcome to Grocify! You will now be redirected.",
+            icon: "success",
+            confirmButtonText: "Start Shopping",
+          }).then(() => {
+            window.location.href = "registered.html";
+          });
         } else {
-          console.log("Form is valid and ready to submit!");
+          e.preventDefault();
+
+          Swal.fire({
+            title: "Registration Failed",
+            text: "Please correct all the required fields and try again.",
+            icon: "error",
+            confirmButtonText: "Got It",
+          });
         }
       });
     </script>

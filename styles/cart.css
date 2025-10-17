@@ -6,7 +6,7 @@
 
 body {
   background-color: #f5f5f5;
-    font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -62,16 +62,15 @@ body {
 }
 
 .cart-items::-webkit-scrollbar {
-    width: 6px;
+  width: 6px;
 }
 .cart-items::-webkit-scrollbar-thumb {
-    background-color: #ffb800;
-    border-radius: 3px;
+  background-color: #ffb800;
+  border-radius: 3px;
 }
 .cart-items::-webkit-scrollbar-track {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
-
 
 .cart-item {
   display: flex;

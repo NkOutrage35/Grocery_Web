@@ -1,3 +1,4 @@
+
 /* --- Flash-Sale CountDown */
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
@@ -22,8 +23,7 @@ function updateCountdown() {
 }
 
 setInterval(updateCountdown, 1000);
-updateCountdown(); 
-
+updateCountdown();
 
 // SIGN-IN JS.
 const form = document.querySelector(".modal-overlay form");
@@ -108,16 +108,35 @@ togglePassword.addEventListener("click", () => {
 /* --- Sign In Button Logic --- */
 signInBtn.addEventListener("click", (e) => {
   e.preventDefault();
+
   if (validateInput()) {
     isFormValidated = true;
-    // Close modal on success before navigating
-    loginModal.classList.remove("visible");
-    window.location.href = "registered.html";
+
+    // 1. Show SweetAlert on SUCCESS
+    Swal.fire({
+      title: "Success!",
+      text: "You have been signed in.",
+      icon: "success",
+      confirmButtonText: "Continue",
+      draggable: true,
+    }).then(() => {
+      // 2. Close modal and redirect AFTER the user acknowledges the alert
+      loginModal.classList.remove("visible");
+      window.location.href = "registered.html";
+    });
+  } else {
+    // 3. Show an error SweetAlert if validation fails (optional, but good practice)
+    Swal.fire({
+      title: "Login Failed",
+      text: "Please correct the errors in the form.",
+      icon: "error",
+      confirmButtonText: "OK",
+      draggable: true,
+    });
   }
 });
 
-// 🌟 MODAL CONTROL LOGIC
-// Open modal when 'Login' is pressed
+// MODAL CONTROL LOGIC
 openModalBtn.addEventListener("click", (e) => {
   e.preventDefault();
   loginModal.classList.add("visible");
@@ -130,7 +149,6 @@ closeModalBtn.addEventListener("click", () => {
 
 // Close modal if the user clicks anywhere outside the form container
 loginModal.addEventListener("click", (e) => {
-  // Check if the click target is the overlay itself
   if (e.target === loginModal) {
     loginModal.classList.remove("visible");
   }

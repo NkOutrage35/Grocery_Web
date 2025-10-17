@@ -1,6 +1,14 @@
-/* HERO SECTION */
+body {
+  font-family: "Lato", sans-serif;
+}
+
 .nav-hero-wrapper {
-  background: var(--brand-gradient);
+  background: linear-gradient(
+    to right,
+    #4B773B,
+    #85bb6b 30%,
+    #ffb800
+  );;
   color: #fff;
   text-align: center;
 }
@@ -8,19 +16,21 @@
 #reg-btn {
   background: none;
   border: 2px solid var(--color-text-light);
-  color: #289402;
+  color: white;
 }
 
-#log-btn {
-  background: none;
+#loginbtn {
+  background: transparent;
 }
 
 .about-hero {
+  font-family: "Lato", sans-serif;
   padding: 6rem 2rem;
 }
 
 .about-hero-content h1 {
   font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
@@ -94,9 +104,8 @@
   margin-top: 3rem;
 }
 .team-member img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+  width: 50%;
+  height: 50%;
   border-radius: 1rem;
 }
 .team-member h3 {

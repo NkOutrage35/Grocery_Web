@@ -35,7 +35,6 @@ function initializeCart() {
   updateCartCount();
 }
 
-
 function addToCartById(productId, quantity) {
   ensureProductDataLoaded();
   const pid = String(productId);
@@ -52,6 +51,18 @@ function addToCartById(productId, quantity) {
   } else {
     cartItems.push({ ...item, quantity });
   }
+
+  // --- SweetAlert Integration for Add To Cart (Optional Enhancement) ---
+  Swal.fire({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+    icon: "success",
+    title: `${quantity}x ${item.name} added to cart!`,
+  });
+  // ---------------------------------------------------------------------
 
   if (cartItemsContainer) {
     renderCartItems(cartItems);
@@ -79,7 +90,6 @@ function updateCartCount() {
     cartCountElement.textContent = totalItems;
   }
 }
-
 
 function renderCartItems(cartItems) {
   if (!cartItemsContainer) return;
@@ -128,6 +138,7 @@ function changeQuantity(id, change) {
   item.quantity += change;
 
   if (item.quantity <= 0) {
+    // If quantity hits zero, remove the item (which now includes SweetAlert logic)
     removeItem(sid);
   } else {
     if (cartItemsContainer) {
@@ -139,18 +150,48 @@ function changeQuantity(id, change) {
   }
 }
 
+// --- CORRECTED REMOVEITEM FUNCTION ---
 function removeItem(id) {
   const sid = String(id);
-  cartItems = cartItems.filter((item) => item.id !== sid);
 
-  if (cartItemsContainer) {
-    renderCartItems(cartItems);
-    calculateCartTotal(cartItems);
-  }
+  if (!cartItemsContainer) return; // Exit if cart container is not present
 
-  saveCart();
-  updateCartCount();
+  Swal.fire({
+    title: "Remove Item?",
+    text: "Are you sure you want to remove this item from your cart?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, remove it!",
+  }).then((result) => {
+    // This code only runs AFTER the user interacts with the first alert
+    if (result.isConfirmed) {
+      // 1. Filter the item out of the array
+      cartItems = cartItems.filter((item) => item.id !== sid);
+
+      // 2. Update UI and storage
+      renderCartItems(cartItems);
+      calculateCartTotal(cartItems);
+      saveCart();
+      updateCartCount();
+
+      // 3. Show the success notification
+      Swal.fire({
+        title: "Removed!",
+        text: "The item has been removed from your cart.",
+        icon: "success",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  });
+
+  // IMPORTANT: The lines that update the cart (renderCartItems, saveCart, etc.)
+  // MUST be inside the .then((result) => {...}) block.
+  // We remove the redundant calls that were placed here previously.
 }
+// --- END CORRECTED REMOVEITEM FUNCTION ---
 
 function saveCart() {
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
