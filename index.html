@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles/download.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/sign-In.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,12 +39,31 @@
           </a>
 
           <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search" />
+            <input
+              type="text"
+              class="search-input"
+              id="SearchInput"
+              placeholder="Search"
+              autocomplete="off"
+              aria-label="Search products"
+            />
             <img
               src="images/Vector.svg"
               alt="Search icon"
               class="search-icon"
             />
+
+            <div id="search-card-container" class="search-items"></div>
+
+            <template id="search-card-template">
+              <div class="search-item">
+                <img src="" alt="" class="search-item-image" item-image />
+                <div class="search-item-details">
+                  <h3 class="search-item-name" item-name></h3>
+                  <p class="search-item-price" item-price></p>
+                </div>
+              </div>
+            </template>
           </div>
 
           <ul class="nav-links">
@@ -93,12 +113,12 @@
     <section class="content-section">
       <div class="content">
         <img
-          src="images\Smart-Sentials-Office-Delivery-Service 1.png"
+          src="images/Smart-Sentials-Office-Delivery-Service 1.png"
           alt="Decorative Line"
           class="content-img img1"
         />
         <img
-          src="images\Rectangle384.png"
+          src="images/Rectangle384.png"
           alt="Decorative Line"
           class="content-img img2"
         />
@@ -129,6 +149,7 @@
         </li>
       </ul>
     </section>
+
     <section class="flash-sale">
       <h2 class="flash-title">
         <span>Flash Sales</span>
@@ -213,7 +234,7 @@
     <!-- Reviews Section -->
     <section class="reviews-section">
       <img
-        src="images\istockphoto-513986542-1024x1024-removebg-preview 1.png"
+        src="images/istockphoto-513986542-1024x1024-removebg-preview 1.png"
         alt="Decorative fruits"
         class="grocery-decorative-fruits"
       />
@@ -223,7 +244,6 @@
       </h2>
 
       <div class="reviews">
-        <!-- Review Card 1 -->
         <div class="review-card">
           <div class="review-header">
             <img src="images/Group 450.png" alt="Stars" class="stars" />
@@ -239,7 +259,6 @@
           </div>
         </div>
 
-        <!-- Review Card 2 -->
         <div class="review-card">
           <div class="review-header">
             <img src="images/Group 450.png" alt="Stars" class="stars" />
@@ -266,8 +285,8 @@
               <img src="images/Group 469.png" alt="Mobile App" />
             </div>
             <div class="background-shapes">
-              <img src="images\Rectangle 408.png" class="green-bg" />
-              <img src="images\Rectangle 409.png" class="yellow-bg" />
+              <img src="images/Rectangle 408.png" class="green-bg" />
+              <img src="images/Rectangle 409.png" class="yellow-bg" />
             </div>
           </div>
 
@@ -404,7 +423,6 @@
           <p id="forgot-password">
             Lost your password? <a href="#">Click here</a>
           </p>
-          <br />
 
           <div class="btn-container">
             <button class="submit-btn" type="submit" id="sign-in-btn">

@@ -20,6 +20,17 @@
   scroll-behavior: smooth;
 }
 
+.products-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.products-grid::-webkit-scrollbar-thumb {
+  background-color: #ffb800;
+  border-radius: 3px;
+}
+.products-grid::-webkit-scrollbar-track {
+  background-color: #e0e0e0;
+}
+
 .see-more-enabled {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -27,7 +38,6 @@
   overflow-x: hidden;
 }
 
-/* Card styling */
 .product-card {
   background: #fff;
   border-radius: 2rem;
